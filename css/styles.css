@@ -48,6 +48,7 @@ body {
     min-height: 200px;
     /* background-color: coral; */
     justify-content: center;
+    position: relative;
 }
 
 .bottom-box {
@@ -65,27 +66,28 @@ body {
 }
 
 .arena h1 {
-    color: #e3ddaf;
+    color: #d4d4d4;
     letter-spacing: 4px;
     margin-top: 2%;
     margin-left: 15%;
     position: absolute;
     font-size: 2em;
     font-family: 'harabara_maisharabaramaisdemo';
+    text-shadow: 2px 2px 3px #212585;
+
 }
 
 .vs {
     width: 200px;
-    border-top: 75px solid black;
+    border-top: 75px solid rgba(0,0,0,0.7);
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    opacity: 0.8;
     margin-bottom: -15px;
     position: relative;
 }
 
 .vs h3 {
-    color: #e3ddaf;
+    color: #d4d4d4;
     letter-spacing: 4px;
     position: absolute;
     font-size: 4em;
@@ -109,6 +111,7 @@ body {
     margin: 0;
     transform: skew(-35deg);
     text-align: center;
+    text-shadow: 2px 2px 3px #6e1501;
 }
 
 .cinco {
@@ -126,16 +129,46 @@ body {
     font-size: 2em;
     transform: skew(35deg);
     text-align: center;
+    text-shadow: 2px 2px 3px #212585;
+
 }
 
 .scoreboard {
-    margin-top: 20px;
+    margin-top: 35px;
     width: 700px;
-    border-top: 500px solid black;
+    border-top: 500px solid rgba(0,0,0,0.6);
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    opacity: 0.85;
     position: relative;
+}
+
+.home-guest {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -75%;
+}
+
+.home {
+    color: #d4d4d4;
+    font-size: 3em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 5px;
+    flex-basis: 0;
+    margin-left: 58px;
+    font-style: italic;
+}
+
+.guest {
+    color: #d4d4d4;
+    font-size: 3em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 5px;
+    flex-basis: 0;
+    margin-right: 57px;
+    font-style: italic;
 }
 
 .scores {
@@ -146,25 +179,37 @@ body {
     margin-top: -60%;
     flex-direction: row;
     justify-content: space-evenly;
+
 }
 
 .scores p {
-    color: white;
+    color: #d9b100;
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
     margin: 0;
     padding-top: 10%;
-    padding-left: 10%;
+    padding-left: 7%;
+    text-shadow: 1px 1px 3px #000;
+    letter-spacing: 15px;
+
 }
 
 .monroe-score {
     height: 200px;
     width:  250px;
-    border: 3px solid white;
+    border: 7px solid white;
+}
+
+.avatars img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin-top: -50%;
+    margin-left: -25%;
 }
 
 .cinco-score {
     height: 200px;
     width:  250px;
-    border: 3px solid white;
+    border: 7px solid white;
 }

@@ -16,6 +16,14 @@
 
 }
 
+@font-face {
+    font-family: 'subway_ticker_gridregular';
+    src: url('/fonts/subwaytickergrid-webfont.woff2') format('woff2'),
+         url('/fonts/subwaytickergrid-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -148,7 +156,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: -75%;
+    margin-top: -70%;
 }
 
 .home {
@@ -157,7 +165,7 @@ body {
     font-family: 'harabara_maisharabaramaisdemo';
     letter-spacing: 5px;
     flex-basis: 0;
-    margin-left: 58px;
+    margin-left: 120px;
     font-style: italic;
 }
 
@@ -167,7 +175,7 @@ body {
     font-family: 'harabara_maisharabaramaisdemo';
     letter-spacing: 5px;
     flex-basis: 0;
-    margin-right: 57px;
+    margin-right: 100px;
     font-style: italic;
 }
 
@@ -176,7 +184,7 @@ body {
     height: 300px;
     display: flex;
     position: absolute;
-    margin-top: -60%;
+    margin-top: -55%;
     flex-direction: row;
     justify-content: space-evenly;
 
@@ -224,8 +232,8 @@ body {
 
 .marquee {
     color: red;
-    font-size: 1em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-size: 1.5em;
+    font-family: 'subway_ticker_gridregular';
     margin-top: -50px;
     width: 100%;
     overflow: hidden;

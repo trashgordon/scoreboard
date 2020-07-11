@@ -200,12 +200,20 @@ body {
     border: 7px solid white;
 }
 
-.avatars img {
+.monroe-img {
     width: 200px;
     height: 200px;
     position: absolute;
     margin-top: -50%;
     margin-left: -25%;
+}
+
+.cinco-img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin-top: -50%;
+    margin-left: 95%;
 }
 
 .cinco-score {
@@ -215,7 +223,11 @@ body {
 }
 
 .marquee {
-    width: 300px; /* the plugin works for responsive layouts so width is not necessary */
+    color: red;
+    font-size: 1em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    margin-top: -50px;
+    width: 100%;
     overflow: hidden;
-    border:1px solid #ccc;
+    position: absolute;
   }

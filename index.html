@@ -7,47 +7,48 @@
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    <div class="flexbox-container">
-        <div class="top-box">
-            <div class="monroe"><p>MONROE</p></div>
-            <div class="top-center">
-                <div class="arena"><h1>2K ARENA</h1></div>
-                <div class="vs"><h3>VS</h3></div>
+    <div id="flexbox-container">
+        <!-- Top section starts here -->
+        <div class="top box">
+            <div id="monroe-text-bg"><p>MONROE</p></div>
+            <div>
+                <div id="arena-bg"><h1>2K ARENA</h1></div>
+                <div id="versus-bg"><h3 id="versus-text">VS</h3></div>
             </div>
-            <div class="cinco"><p>CINCO</p></div>
+            <div id="cinco-text-bg"><p>CINCO</p></div>
         </div>
-        <div class="middle-box">
-            <div class="scoreboard">
+        <!-- Middle section starts here -->
+        <div class="middle box">
+            <div id="scoreboard-bg">
                 <div class="avatars">
-                    <img class="monroe-img" src="img/monroe-ava.png" alt="Monroe Avatar">
-                    <img class="cinco-img" src="img/cinco-ava.png" alt="Monroe Avatar">
+                    <img id="monroe-avatar" src="img/monroe-ava.png" alt="Monroe Avatar">
+                    <img id="cinco-avatar" src="img/cinco-ava.png" alt="Monroe Avatar">
                 </div>
-                <div class="home-guest">
-                    <p class="home">HOME</p>
-                    <p class="guest">GUEST</p>
+                <div id="home-guest-row">
+                    <p id="home-text">HOME</p>
+                    <p id="guest-text">GUEST</p>
                 </div>
-                <div class="scores">
-                    <div class="monroe-score">
-                        <p id="left-score"></p>
+                <div id="scorebox-squares-row">
+                    <div class="scorebox-square">
+                        <p id="left-score">00</p>
                     </div>
-                    <div class="cinco-score">
-                        <p id="right-score"></p>
+                    <div class="scorebox-square">
+                        <p id="right-score">00</p>
                     </div>
                 </div>
-                <marquee id="marquee">LAC VS DAL: 110-102</marquee>
+                <marquee>NO GAME STATS TO DISPLAY</marquee>
             </div>
         </div>
-        <div class="bottom-box">
-            <button class="add-game-button" id="popup" onclick="div_show()">ADD GAME</button>
-            <!-- Popup Div Starts Here -->
-            <div id="popupContact">
-                <!-- Contact Us Form -->
+        <!-- Bottom section starts here -->
+        <div class="bottom box">
+            <button id="add-game" onclick="showForm()">ADD GAME</button>
+            <div id="add-game-form">
                 <form action="#" id="form" method="post" name="form">
-                    <img id="close" src="/img/close-button.png" onclick ="div_hide()">
+                    <img id="close" src="/img/close-button.png" onclick ="hideForm()">
                     <h2>GAME STATS</h2>
                     <hr>
-                    <div id="stat-container">
-                        <div id="form-left-side">
+                    <div id="fields-container">
+                        <div id="form-left-column">
                             <label for="monroe-team">TEAM</label>
                             <select id="monroe-team">
                                 <option value="atl">ATL</option>
@@ -84,7 +85,7 @@
                             <label for="monroe-score">SCORE</label>
                             <input type="number" id="monroe-score">
                         </div>
-                        <div id="form-right-side">
+                        <div id="form-right-column">
                             <label for="cinco-team">TEAM</label>
                             <select id="cinco-team">
                                 <option value="atl">ATL</option>

@@ -1,70 +1,78 @@
-// $("button").on("click", function() {
-//     let monroeTeam = prompt("Who was Monroe's team?");
-//     let monroeScore = prompt("What was Monroe's score?")
-//     let cincoTeam = prompt("Who was Cinco's team?");
-//     let cincoScore = prompt("What was Cinco's score?")
-// })
-
 // Variables to store individual game stats
-let monroeTeam
-let monroeScore
-let monroeWins = 0
-let cincoTeam
-let cincoScore
-let cincoWins = 0
+let monroeChosenTeam
+let cincoChosenTeam
+let monroeFinalScore
+let cincoFinalScore
+let monroeTotalWins = 0
+let cincoTotalWins = 0
 let pad = '00';
 
-// Arrays to store all game stats
-let allMonroeTeams = [];
-let allMonroeScores = [];
-let allCincoTeams = [];
-let allCincoScores = [];
-
-let monroeWinsPadded = (pad+String(monroeWins)).slice(-pad.length);
-let cincoWinsPadded = (pad+String(cincoWins)).slice(-pad.length);
-document.getElementById("left-score").innerHTML = monroeWinsPadded;
-document.getElementById("right-score").innerHTML = cincoWinsPadded;
-
-
-// Display Popup
-function div_show() {
-    document.getElementById('popupContact').style.display = "block";
+function showForm() {
+    document.getElementById('add-game-form').style.display = 'block';
+    moveElementDown();
 }
 
-// Hide Popup
-function div_hide() {
-    document.getElementById('popupContact').style.display = "none";
+function hideForm() {
+    document.getElementById('add-game-form').style.display = 'none';
+    moveElementUp();
 }
 
 $('a#submit').on('click', function() {
-    monroeTeam = document.getElementById("monroe-team").value;
-    monroeScore = document.getElementById("monroe-score").value;
-    cincoTeam = document.getElementById("cinco-team").value;
-    cincoScore = document.getElementById("cinco-score").value;
+    monroeChosenTeam = document.getElementById("monroe-team").value;
+    monroeFinalScore = document.getElementById("monroe-score").value;
+    cincoChosenTeam = document.getElementById("cinco-team").value;
+    cincoFinalScore = document.getElementById("cinco-score").value;
 
-    allMonroeTeams.push(monroeTeam);
-    allMonroeScores.push(monroeScore);
-    allCincoTeams.push(cincoTeam);
-    allCincoScores.push(cincoScore);
-
-    div_hide();
-    updateScore();
+    hideForm();
+    updateScore(monroeFinalScore, cincoFinalScore);
     updateMarquee();
 })
 
-function updateScore() {
-    if (monroeScore > cincoScore) {
-        monroeWins = monroeWins + 1;
-    } else if (cincoScore > monroeScore) {
-        cincoWins = cincoWins + 1;
+function updateScore(monroeFinalScore, cincoFinalScore) {
+    if (Number(monroeFinalScore) > Number(cincoFinalScore)) {
+        monroeTotalWins++
+    } else {
+        cincoTotalWins++
     }
-    monroeWinsPadded = (pad+String(monroeWins)).slice(-pad.length);
-    cincoWinsPadded = (pad+String(cincoWins)).slice(-pad.length);
-    document.getElementById("left-score").innerHTML = monroeWinsPadded;
-    document.getElementById("right-score").innerHTML = cincoWinsPadded;
+    let monroeTotalWinsPadded = (pad + String(monroeTotalWins)).slice(-pad.length);
+    let cincoTotalWinsPadded = (pad + String(cincoTotalWins)).slice(-pad.length);
+    document.getElementById("left-score").innerHTML = monroeTotalWinsPadded;
+    document.getElementById("right-score").innerHTML = cincoTotalWinsPadded;
 }
 
 function updateMarquee() {
-   let marquee = document.getElementById("marquee")
-   marquee.innerHTML = monroeTeam.toUpperCase() + " VS " + cincoTeam.toUpperCase() + ": " + monroeScore + "-" + cincoScore;
+   let marquee = document.querySelector("marquee")
+   marquee.innerHTML = monroeChosenTeam.toUpperCase() + " VS " +
+                       cincoChosenTeam.toUpperCase() + ": " +
+                       monroeFinalScore + "-" + cincoFinalScore;
 }
+
+function moveElementDown() {
+    let elem = document.getElementById("versus-text");
+    let pos = 0;
+    let id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 285) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.top = pos + 'px';
+        elem.style.bottom = pos + 'px';
+      }
+    }
+  }
+
+  function moveElementUp() {
+    let elem = document.getElementById("versus-text");
+    let pos = 285;
+    let id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 0) {
+        clearInterval(id);
+      } else {
+        pos--;
+        elem.style.bottom = pos + 'px';
+        elem.style.top = pos + 'px';
+      }
+    }
+  }

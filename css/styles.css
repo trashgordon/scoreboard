@@ -24,7 +24,7 @@
 
 body {
     max-height: 100%;
-    background-image: url("/img/bball-arena.jpg");
+    background-image: url("../img/bball-arena.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #000;

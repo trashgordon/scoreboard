@@ -6,7 +6,6 @@
     font-style: normal;
 
 }
-
 @font-face {
     font-family: 'harabara_maisharabaramaisdemo';
     src: url('/fonts/harabara_mais_demo-webfont.woff2') format('woff2'),
@@ -15,7 +14,6 @@
     font-style: normal;
 
 }
-
 @font-face {
     font-family: 'subway_ticker_gridregular';
     src: url('/fonts/subwaytickergrid-webfont.woff2') format('woff2'),
@@ -25,235 +23,218 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    max-height: 100%;
     background-image: url("/img/bball-arena.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #000;
-    max-height: 100%;
 }
 
-.flexbox-container {
-    display: flex;
+/* Site layout is three rows within a container that spans the body */
+div#flexbox-container {
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
-    max-height: 1000px;
+    display: flex;
 }
 
-.top-box {
+div.box {
     flex-direction: row;
-    display: flex;
     justify-content: center;
+    display: flex;
+
+}
+
+div.top {
     align-items: flex-end;
-    flex: 1;
     min-height: 200px;
-    /* background-color: bisque; */
 }
 
-.middle-box {
-    flex-direction: row;
-    display: flex;
+div.middle {
     min-height: 200px;
-    /* background-color: coral; */
-    justify-content: center;
-    position: relative;
 }
 
-.bottom-box {
-    flex: 1;
+div.bottom {
     margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
-.arena {
+/* TOP SECTION ELEMENTS */
+div#arena-bg {
+    position: relative;
+    border-right: 25px solid transparent;
     border-bottom: 50px solid #144d91;
     border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    position: relative;
-
 }
 
-.arena h1 {
-    color: #d4d4d4;
-    letter-spacing: 4px;
+div#arena-bg h1 {
+    position: absolute;
     margin-top: 2%;
     margin-left: 15%;
-    position: absolute;
     font-size: 2em;
     font-family: 'harabara_maisharabaramaisdemo';
     text-shadow: 2px 2px 3px #212585;
-
-}
-
-.vs {
-    width: 200px;
-    border-top: 75px solid rgba(0,0,0,0.7);
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    margin-bottom: -15px;
-    position: relative;
-}
-
-.vs h3 {
-    color: #d4d4d4;
     letter-spacing: 4px;
+    color: #ccc;
+}
+
+div#versus-bg {
+    position: relative;
+    margin-bottom: -15px;
+    border-top: 75px solid rgba(0,0,0,0.7);
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    width: 200px;
+}
+
+div#versus-bg h3 {
     position: absolute;
-    font-size: 4em;
     margin-top: -37%;
     margin-left: 27%;
+    font-size: 4em;
     font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 4px;
+    color: #ccc;
+
 }
 
-.monroe {
-    width:300px;
-    margin-right: -20px;
+#versus-text {
+    z-index: 99;
+}
+
+
+div#monroe-text-bg {
     transform: skew(35deg);
+    margin-right: -20px;
+    width:300px;
     background-color: #a31826;
 }
 
-.monroe p {
-    color: #d9b100;
-    font-family: 'harabara_maisharabaramaisdemo';
-    letter-spacing: 6px;
-    font-size: 2em;
-    margin: 0;
+div#monroe-text-bg p {
     transform: skew(-35deg);
+    margin: 0;
+    font-size: 2em;
+    font-family: 'harabara_maisharabaramaisdemo';
     text-align: center;
     text-shadow: 2px 2px 3px #6e1501;
+    letter-spacing: 6px;
+    color: #d9b100;
 }
 
-.cinco {
-    width: 300px;
-    margin-left: -20px;
+div#cinco-text-bg {
     transform: skew(-35deg);
+    margin-left: -20px;
+    width: 300px;
     background-color: #3248a8;
 }
 
-.cinco p {
-    margin: 0;
-    font-family: 'harabara_maisharabaramaisdemo';
-    letter-spacing: 6px;
-    color: #d4d4d4;
-    font-size: 2em;
+div#cinco-text-bg p {
     transform: skew(35deg);
+    margin: 0;
+    font-size: 2em;
+    font-family: 'harabara_maisharabaramaisdemo';
     text-align: center;
     text-shadow: 2px 2px 3px #212585;
-
+    letter-spacing: 6px;
+    color: #ccc;
 }
 
-.scoreboard {
+/* MIDDLE SECTION ELEMENTS */
+div#scoreboard-bg {
+    position: relative;
     margin-top: 35px;
     width: 700px;
-    border-top: 500px solid rgba(0,0,0,0.6);
-    border-left: 100px solid transparent;
+    border-top: 500px solid rgba(0,0,0,0.7);
     border-right: 100px solid transparent;
-    position: relative;
+    border-left: 100px solid transparent;
 }
 
-.home-guest {
+img#monroe-avatar {
     position: absolute;
-    width: 100%;
-    display: flex;
+    margin-top: -50%;
+    margin-left: -35%;
+    width: 250px;
+    height: 250px;
+}
+
+img#cinco-avatar {
+    position: absolute;
+    margin-top: -50%;
+    margin-left: 97%;
+    width: 250px;
+    height: 250px;
+}
+
+div#home-guest-row {
+    position: absolute;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: -70%;
-}
-
-.home {
-    color: #d4d4d4;
-    font-size: 3em;
-    font-family: 'harabara_maisharabaramaisdemo';
-    letter-spacing: 5px;
-    flex-basis: 0;
-    margin-left: 120px;
-    font-style: italic;
-}
-
-.guest {
-    color: #d4d4d4;
-    font-size: 3em;
-    font-family: 'harabara_maisharabaramaisdemo';
-    letter-spacing: 5px;
-    flex-basis: 0;
-    margin-right: 100px;
-    font-style: italic;
-}
-
-.scores {
-    width: 100%;
-    height: 300px;
     display: flex;
+    margin-top: -70%;
+    width: 100%;
+    font-size: 3em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    font-style: italic;
+    letter-spacing: 5px;
+    color: #ccc;
+}
+
+p#home-text {
+    margin-left: 120px;
+}
+
+p#guest-text {
+    margin-right: 100px;
+}
+
+div#scorebox-squares-row {
     position: absolute;
-    margin-top: -55%;
     flex-direction: row;
     justify-content: space-evenly;
-
+    display: flex;
+    margin-top: -55%;
+    width: 100%;
 }
 
-.scores p {
-    color: #d9b504;
+div#scorebox-squares-row p {
+    margin: 0;
+    height: 173px;
+    padding-top: 27px;
+    padding-left: 20px;
+    background-color: rgba(0,0,0,0.8);
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
-    margin: 0;
-    padding-top: 10%;
-    padding-left: 7%;
     text-shadow: 1px 1px 10px #ffd400;
     letter-spacing: 15px;
+    color: #d9b504;
 
 }
 
-.monroe-score {
-    height: 200px;
+div.scorebox-square {
+    border: 7px solid #ccc;
     width:  250px;
-    border: 7px solid white;
+    height: 200px;
 }
 
-.monroe-img {
-    width: 200px;
-    height: 200px;
+marquee {
     position: absolute;
-    margin-top: -50%;
-    margin-left: -25%;
-}
-
-.cinco-img {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    margin-top: -50%;
-    margin-left: 96%;
-}
-
-.cinco-score {
-    height: 200px;
-    width:  250px;
-    border: 7px solid white;
-}
-
-#marquee {
-    color: red;
-    font-size: 2em;
-    font-family: 'subway_ticker_gridregular';
+    overflow: hidden;
     margin-top: -100px;
-    background-color: rgba(0,0,0,0.8);
     border-radius: 20px;
     width: 100%;
-    overflow: hidden;
-    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 2em;
+    font-family: 'subway_ticker_gridregular';
+    color: red;
   }
 
-.add-game-button {
-    color: #d9b100;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    font-family: 'harabara_maisharabaramaisdemo';
-    letter-spacing: 5px;
+/* BOTTOM SECTION ELEMENTS */  
+button#add-game {
     border-radius: 4px;
     border-color: #d9b100;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
     font-size: 110%;
+    font-family: 'harabara_maisharabaramaisdemo';
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    letter-spacing: 5px;
+    color: #d9b100;
 }

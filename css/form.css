@@ -7,41 +7,43 @@
 }
 
 img#close {
-    position:absolute;
-    height: 35px;
-    width: 35px;
-    right: 15px;
+    position: absolute;
     top: 20px;
-    cursor:pointer
+    right: 15px;
+    width: 35px;
+    height: 35px;
 }
-div#popupContact {
-    position:absolute;
-    left:50%;
-    top:25%;
-    margin-left:-280px;
-    font-family: 'harabara_maisharabaramaisdemo';
+
+div#add-game-form {
+    position: absolute;
+    top: 25%;
+    left: 50%;
     display: none;
-}
-form {
-    color: #d9b100;
-    max-width:450px;
-    min-width:450px;
-    padding:10px 50px;
-    border:5px solid white;
-    border-radius:10px;
+    margin-left: -280px;
     font-family: 'harabara_maisharabaramaisdemo';
-    background-color: rgb(0,0,0);
-    display: flex;
+}
+
+form {
     flex-direction: column;
+    display: flex;
+    border: 5px solid white;
+    border-radius: 10px;
+    max-width: 450px;
+    min-width: 450px;
+    padding:10px 50px;
+    background-image: linear-gradient(to bottom right, black, #222, black);
+    /* background-color: rgb(0,0,0); */
+    font-family: 'harabara_maisharabaramaisdemo';
+    color: #d9b100;
 }
 
 h2 {
+    margin: -10px -50px;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 35px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
     letter-spacing: 4px;
-    background-color: rgba(0,0,0,0.9);
-    padding:20px 35px;
-    margin:-10px -50px;
-    text-align:center;
-    border-radius:10px 10px 0 0
 }
 
 hr {
@@ -50,50 +52,45 @@ hr {
     border-top:1px solid #444;
 }
 
-select {
-    width: 150px;
-    padding: 10px;
+input, select {
     margin-top: 10px;
     margin-bottom: 40px;
-    box-sizing:  border-box;
-}
-input {
+    box-sizing: border-box;
     width: 150px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    box-sizing:  border-box;
 }
 
-div#stat-container {
-    display: flex;
+div#fields-container {
     flex-direction: row;
     justify-content: space-between;
-}
-
-div#form-left-side {
     display: flex;
-    flex-direction: column;
+    letter-spacing: 4px;
 }
 
-div#form-right-side {
+div#form-left-column {
+    flex-direction: column;
+    display: flex;
+    text-align: left;
+}
+
+div#form-right-column {
     display: flex;
     flex-direction: column;
     text-align: right;
 }
 
-#submit {
-    text-decoration:none;
-    width:200px;
-    text-align: center;
+a#submit {
+    display: block;
     margin: 10px auto;
-    display:block;
-    background-color:#3248a8;
-    color:#fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px 0;
+    background-image: linear-gradient(to bottom, black, #222, black);
+    background-color:#111;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
     letter-spacing: 4px;
-    border:1px solid white;
-    padding:10px 0;
-    font-size:20px;
-    cursor:pointer;
-    border-radius:5px
+    color: #d9b100;
 }

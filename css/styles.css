@@ -28,9 +28,10 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("/img/bball-arena.jpg");
-    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-color: #000;
-    height: 100%;
+    max-height: 100%;
 }
 
 .flexbox-container {
@@ -38,6 +39,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    max-height: 1000px;
 }
 
 .top-box {
@@ -61,8 +63,10 @@ body {
 
 .bottom-box {
     flex: 1;
-    min-height: 200px;
-    /* background-color: goldenrod; */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .arena {
@@ -191,13 +195,13 @@ body {
 }
 
 .scores p {
-    color: #d9b100;
+    color: #d9b504;
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
     margin: 0;
     padding-top: 10%;
     padding-left: 7%;
-    text-shadow: 1px 1px 3px #000;
+    text-shadow: 1px 1px 10px #ffd400;
     letter-spacing: 15px;
 
 }
@@ -221,7 +225,7 @@ body {
     height: 200px;
     position: absolute;
     margin-top: -50%;
-    margin-left: 95%;
+    margin-left: 96%;
 }
 
 .cinco-score {
@@ -230,12 +234,26 @@ body {
     border: 7px solid white;
 }
 
-.marquee {
+#marquee {
     color: red;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'subway_ticker_gridregular';
-    margin-top: -50px;
+    margin-top: -100px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
     width: 100%;
     overflow: hidden;
     position: absolute;
   }
+
+.add-game-button {
+    color: #d9b100;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 5px;
+    border-radius: 4px;
+    border-color: #d9b100;
+    font-size: 110%;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}

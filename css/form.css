@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'harabara_maisharabaramaisdemo';
+    src: url('/fonts/harabara_mais_demo-webfont.woff2') format('woff2'),
+         url('/fonts/harabara_mais_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img#close {
+    position:absolute;
+    height: 35px;
+    width: 35px;
+    right: 15px;
+    top: 20px;
+    cursor:pointer
+}
+div#popupContact {
+    position:absolute;
+    left:50%;
+    top:25%;
+    margin-left:-280px;
+    font-family: 'harabara_maisharabaramaisdemo';
+    display: block;
+}
+form {
+    color: #d9b100;
+    max-width:450px;
+    min-width:450px;
+    padding:10px 50px;
+    border:5px solid white;
+    border-radius:10px;
+    font-family: 'harabara_maisharabaramaisdemo';
+    background-color: rgb(0,0,0);
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    letter-spacing: 4px;
+    background-color: rgba(0,0,0,0.9);
+    padding:20px 35px;
+    margin:-10px -50px;
+    text-align:center;
+    border-radius:10px 10px 0 0
+}
+
+hr {
+    margin:10px -50px;
+    border:0;
+    border-top:1px solid #444;
+}
+
+select {
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    box-sizing:  border-box;
+}
+input {
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    box-sizing:  border-box;
+}
+
+div#stat-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div#form-left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+div#form-right-side {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#submit {
+    text-decoration:none;
+    width:200px;
+    text-align: center;
+    margin: 10px auto;
+    display:block;
+    background-color:#3248a8;
+    color:#fff;
+    letter-spacing: 4px;
+    border:1px solid white;
+    padding:10px 0;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:5px
+}

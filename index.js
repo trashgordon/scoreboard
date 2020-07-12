@@ -9,12 +9,10 @@ let pad = '00';
 
 function showForm() {
     document.getElementById('add-game-form').style.display = 'block';
-    moveElementDown();
 }
 
 function hideForm() {
     document.getElementById('add-game-form').style.display = 'none';
-    moveElementUp();
 }
 
 $('a#submit').on('click', function() {
@@ -46,33 +44,3 @@ function updateMarquee() {
                        cincoChosenTeam.toUpperCase() + ": " +
                        monroeFinalScore + "-" + cincoFinalScore;
 }
-
-function moveElementDown() {
-    let elem = document.getElementById("versus-text");
-    let pos = 0;
-    let id = setInterval(frame, 5);
-    function frame() {
-      if (pos == 285) {
-        clearInterval(id);
-      } else {
-        pos++;
-        elem.style.top = pos + 'px';
-        elem.style.bottom = pos + 'px';
-      }
-    }
-  }
-
-  function moveElementUp() {
-    let elem = document.getElementById("versus-text");
-    let pos = 285;
-    let id = setInterval(frame, 5);
-    function frame() {
-      if (pos == 0) {
-        clearInterval(id);
-      } else {
-        pos--;
-        elem.style.bottom = pos + 'px';
-        elem.style.top = pos + 'px';
-      }
-    }
-  }

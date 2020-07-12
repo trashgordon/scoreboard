@@ -8,14 +8,23 @@
 // Variables to store individual game stats
 let monroeTeam
 let monroeScore
+let monroeWins = 0
 let cincoTeam
 let cincoScore
+let cincoWins = 0
+let pad = '00';
 
 // Arrays to store all game stats
 let allMonroeTeams = [];
 let allMonroeScores = [];
 let allCincoTeams = [];
 let allCincoScores = [];
+
+let monroeWinsPadded = (pad+String(monroeWins)).slice(-pad.length);
+let cincoWinsPadded = (pad+String(cincoWins)).slice(-pad.length);
+document.getElementById("left-score").innerHTML = monroeWinsPadded;
+document.getElementById("right-score").innerHTML = cincoWinsPadded;
+
 
 // Display Popup
 function div_show() {
@@ -41,16 +50,18 @@ $('a#submit').on('click', function() {
     div_hide();
     updateScore();
     updateMarquee();
-
-    console.log(monroeTeam);
-    console.log(monroeScore);
-    console.log(cincoTeam);
-    console.log(cincoScore);
-
 })
 
 function updateScore() {
-
+    if (monroeScore > cincoScore) {
+        monroeWins = monroeWins + 1;
+    } else if (cincoScore > monroeScore) {
+        cincoWins = cincoWins + 1;
+    }
+    monroeWinsPadded = (pad+String(monroeWins)).slice(-pad.length);
+    cincoWinsPadded = (pad+String(cincoWins)).slice(-pad.length);
+    document.getElementById("left-score").innerHTML = monroeWinsPadded;
+    document.getElementById("right-score").innerHTML = cincoWinsPadded;
 }
 
 function updateMarquee() {

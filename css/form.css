@@ -20,7 +20,7 @@ div#popupContact {
     top:25%;
     margin-left:-280px;
     font-family: 'harabara_maisharabaramaisdemo';
-    display: block;
+    display: none;
 }
 form {
     color: #d9b100;

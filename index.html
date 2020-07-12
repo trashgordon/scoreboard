@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Scoreboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <div class="flexbox-container">
@@ -33,11 +34,100 @@
                         <p>05</p>
                     </div>
                 </div>
-                <marquee class="marquee">LAST GAME: 7/9/20 LAC VS DAL: 110-102</marquee>
+                <marquee id="marquee">LAC VS DAL: 110-102</marquee>
             </div>
         </div>
         <div class="bottom-box">
-        
+            <button class="add-game-button" id="popup" onclick="div_show()">ADD GAME</button>
+            <!-- Popup Div Starts Here -->
+            <div id="popupContact">
+                <!-- Contact Us Form -->
+                <form action="#" id="form" method="post" name="form">
+                    <img id="close" src="/img/close-button.png" onclick ="div_hide()">
+                    <h2>GAME STATS</h2>
+                    <hr>
+                    <div id="stat-container">
+                        <div id="form-left-side">
+                            <label for="monroe-team">TEAM</label>
+                            <select id="monroe-team">
+                                <option value="atl">ATL</option>
+                                <option value="bkn">BKN</option>
+                                <option value="bos">BOS</option>
+                                <option value="cha">CHA</option>
+                                <option value="chi">CHI</option>
+                                <option value="cle">CLE</option>
+                                <option value="dal">DAL</option>
+                                <option value="den">DEN</option>
+                                <option value="det">DET</option>
+                                <option value="gsw">GSW</option>
+                                <option value="hou">HOU</option>
+                                <option value="ind">IND</option>
+                                <option value="lac">LAC</option>
+                                <option value="lal">LAL</option>
+                                <option value="mem">MEM</option>
+                                <option value="mia">MIA</option>
+                                <option value="mil">MIL</option>
+                                <option value="min">MIN</option>
+                                <option value="nop">NOP</option>
+                                <option value="nyk">NYK</option>
+                                <option value="okc">OKC</option>
+                                <option value="orl">ORL</option>
+                                <option value="phi">PHI</option>
+                                <option value="phx">PHX</option>
+                                <option value="por">POR</option>
+                                <option value="sac">SAC</option>
+                                <option value="sas">SAS</option>
+                                <option value="tor">TOR</option>
+                                <option value="uta">UTA</option>
+                                <option value="was">WAS</option>
+                            </select>
+                            <label for="monroe-score">SCORE</label>
+                            <input type="number" id="monroe-score">
+                        </div>
+                        <div id="form-right-side">
+                            <label for="cinco-team">TEAM</label>
+                            <select id="cinco-team">
+                                <option value="atl">ATL</option>
+                                <option value="bkn">BKN</option>
+                                <option value="bos">BOS</option>
+                                <option value="cha">CHA</option>
+                                <option value="chi">CHI</option>
+                                <option value="cle">CLE</option>
+                                <option value="dal">DAL</option>
+                                <option value="den">DEN</option>
+                                <option value="det">DET</option>
+                                <option value="gsw">GSW</option>
+                                <option value="hou">HOU</option>
+                                <option value="ind">IND</option>
+                                <option value="lac">LAC</option>
+                                <option value="lal">LAL</option>
+                                <option value="mem">MEM</option>
+                                <option value="mia">MIA</option>
+                                <option value="mil">MIL</option>
+                                <option value="min">MIN</option>
+                                <option value="nop">NOP</option>
+                                <option value="nyk">NYK</option>
+                                <option value="okc">OKC</option>
+                                <option value="orl">ORL</option>
+                                <option value="phi">PHI</option>
+                                <option value="phx">PHX</option>
+                                <option value="por">POR</option>
+                                <option value="sac">SAC</option>
+                                <option value="sas">SAS</option>
+                                <option value="tor">TOR</option>
+                                <option value="uta">UTA</option>
+                                <option value="was">WAS</option>
+                            </select>
+                            <label for="cinco-score">SCORE</label>
+                            <input type="number" id="cinco-score">
+                        </div>
+                    </div>
+                    <hr>
+                    <a href="javascript:%20check_empty()" id="submit">SUBMIT</a>
+                </form>
+            </div>
+                <!-- Popup Div Ends Here -->
+        </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

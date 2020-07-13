@@ -1,23 +1,25 @@
 @font-face {
     font-family: 'cursed_timer_ulilregular';
     src: url('/fonts/cursedtimerulil-aznm-webfont.woff2') format('woff2'),
-         url('/fonts/ursedtimerulil-aznm-webfont.woff') format('woff');
+        url('/fonts/ursedtimerulil-aznm-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
+
 @font-face {
     font-family: 'harabara_maisharabaramaisdemo';
     src: url('/fonts/harabara_mais_demo-webfont.woff2') format('woff2'),
-         url('/fonts/harabara_mais_demo-webfont.woff') format('woff');
+        url('/fonts/harabara_mais_demo-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
+
 @font-face {
     font-family: 'subway_ticker_gridregular';
     src: url('/fonts/subwaytickergrid-webfont.woff2') format('woff2'),
-         url('/fonts/subwaytickergrid-webfont.woff') format('woff');
+        url('/fonts/subwaytickergrid-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -79,7 +81,7 @@ div#arena-bg h1 {
 div#versus-bg {
     position: relative;
     margin-bottom: -15px;
-    border-top: 75px solid rgba(0,0,0,0.7);
+    border-top: 75px solid rgba(0, 0, 0, 0.7);
     border-right: 50px solid transparent;
     border-left: 50px solid transparent;
     width: 200px;
@@ -104,7 +106,7 @@ div#versus-bg h3 {
 div#monroe-text-bg {
     transform: skew(35deg);
     margin-right: -20px;
-    width:300px;
+    width: 300px;
     background-color: #a31826;
 }
 
@@ -142,7 +144,7 @@ div#scoreboard-bg {
     position: relative;
     margin-top: 35px;
     width: 700px;
-    border-top: 500px solid rgba(0,0,0,0.7);
+    border-top: 500px solid rgba(0, 0, 0, 0.7);
     border-right: 100px solid transparent;
     border-left: 100px solid transparent;
 }
@@ -199,7 +201,7 @@ div#scorebox-squares-row p {
     height: 173px;
     padding-top: 27px;
     padding-left: 20px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
     text-shadow: 1px 1px 10px #ffd400;
@@ -210,7 +212,7 @@ div#scorebox-squares-row p {
 
 div.scorebox-square {
     border: 7px solid #ccc;
-    width:  250px;
+    width: 250px;
     height: 200px;
 }
 
@@ -220,13 +222,13 @@ marquee {
     margin-top: -100px;
     border-radius: 20px;
     width: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 2em;
     font-family: 'subway_ticker_gridregular';
     color: red;
-  }
+}
 
-/* BOTTOM SECTION ELEMENTS */  
+/* BOTTOM SECTION ELEMENTS */
 button#add-game {
     border-radius: 4px;
     border-color: #d9b100;
@@ -237,4 +239,186 @@ button#add-game {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
+}
+
+
+/* Mobile Version */
+
+@media (max-width: 375px) {
+    body {
+        max-height: 100%;
+        background-image: url("/img/mwp1.jpg");
+        background-repeat: no-repeat;
+        background-color: #000;
+        background-position: center;
+        background-position-y: 15%;
+    }
+
+    div.box {
+        flex-direction: row;
+        justify-content: center;
+        display: flex;
+
+    }
+
+    div.top {
+        align-items: flex-end;
+        min-height: 100px;
+    }
+
+    /* TOP SECTION ELEMENTS */
+    div#arena-bg {
+        display: none;
+    }
+
+    div#arena-bg h1 {
+        display: none;
+    }
+
+    div#versus-bg {
+        display: none;
+    }
+
+    div#versus-bg h3 {
+        display: none;
+
+    }
+
+    #versus-text {
+        z-index: 99;
+    }
+
+
+    div#monroe-text-bg {
+        transform: none;
+        margin-left: 60px;
+        width: 180px;
+        background-color: transparent;
+    }
+
+    div#monroe-text-bg p {
+        transform: none;
+        margin: 0;
+        font-size: 30px;
+        font-family: 'harabara_maisharabaramaisdemo';
+        text-align: center;
+        text-shadow: 2px 2px 3px #212585;
+        letter-spacing: 6px;
+        color: #b0b0b0;
+    }
+
+    div#cinco-text-bg {
+        transform: none;
+        margin-left: 80px;
+        margin-right: 65px;
+        width: 125px;
+        background-color: transparent;
+    }
+
+    div#cinco-text-bg p {
+        transform: none;
+        margin: 0;
+        font-size: 30px;
+        font-family: 'harabara_maisharabaramaisdemo';
+        text-align: center;
+        text-shadow: 2px 2px 3px #212585;
+        letter-spacing: 6px;
+        color: #b0b0b0;
+    }
+
+    /* MIDDLE SECTION ELEMENTS */
+    div#scoreboard-bg {
+        position: relative;
+        margin-top: 35px;
+        width: 200px;
+        border-top: 400px solid rgba(0, 0, 0, 0.7);
+        border-right: 100px solid transparent;
+        border-left: 100px solid transparent;
+    }
+
+    img#monroe-avatar {
+        position: absolute;
+        margin-top: -179%;
+        margin-left: -75%;
+        width: 200px;
+        height: 180px;
+        z-index: 3;
+    }
+
+    img#cinco-avatar {
+        position: absolute;
+        margin-top: -179%;
+        margin-left: 47%;
+        width: 200px;
+        height: 180px;
+        z-index: 3;
+    }
+
+    div#home-guest-row {
+        display: none;
+    }
+
+    p#home-text {
+        margin-left: 120px;
+    }
+
+    p#guest-text {
+        margin-right: 100px;
+    }
+
+    div#scorebox-squares-row {
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-evenly;
+        display: flex;
+        margin-top: 50%;
+        width: 100%;
+        bottom: 200px;
+    }
+
+    div#scorebox-squares-row p {
+        margin: 0;
+        height: 173px;
+        padding-top: 27px;
+        padding-left: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 6em;
+        font-family: 'cursed_timer_ulilregular';
+        text-shadow: 1px 1px 10px #ffd400;
+        letter-spacing: 15px;
+        color: #d9b504;
+
+    }
+
+    div.scorebox-square {
+        border: 7px solid #ccc;
+        width: 250px;
+        height: 200px;
+    }
+
+    marquee {
+        position: absolute;
+        overflow: hidden;
+        margin-top: -100px;
+        border-radius: 20px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 2em;
+        font-family: 'subway_ticker_gridregular';
+        color: red;
+    }
+
+    /* BOTTOM SECTION ELEMENTS */
+    button#add-game {
+        border-radius: 4px;
+        border-color: #d9b100;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        font-size: 30px;
+        font-family: 'harabara_maisharabaramaisdemo';
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        letter-spacing: 5px;
+        color: #d9b100;
+        width: 250px;
+    }
 }

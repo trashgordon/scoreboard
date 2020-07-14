@@ -178,6 +178,13 @@ img.avatar {
     height: 250px;
 }
 
+
+img.cinco {
+    width: 370px;
+    height: 370px;
+}
+
+
 div#home-guest-row {
     position: absolute;
     flex-direction: row;

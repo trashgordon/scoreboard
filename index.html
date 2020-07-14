@@ -30,10 +30,10 @@
                 </div>
                 <div id="scorebox-squares-row">
                     <div class="scorebox-square">
-                        <p id="left-score">00</p>
+                        <p id="home-wins">00</p>
                     </div>
                     <div class="scorebox-square">
-                        <p id="right-score">00</p>
+                        <p id="guest-wins">00</p>
                     </div>
                 </div>
                 <marquee>NO GAME STATS TO DISPLAY</marquee>
@@ -49,9 +49,9 @@
                     <hr>
                     <div id="fields-container">
                         <h3 id="form-versus-text">VS</h3>
-                        <div id="form-left-column">
-                            <label for="monroe-team">TEAM</label>
-                            <select id="monroe-team">
+                        <div id="player-one-column">
+                            <label for="player-one-team">TEAM</label>
+                            <select id="player-one-team">
                                 <option value="atl">ATL</option>
                                 <option value="bkn">BKN</option>
                                 <option value="bos">BOS</option>
@@ -83,12 +83,12 @@
                                 <option value="uta">UTA</option>
                                 <option value="was">WAS</option>
                             </select>
-                            <label for="monroe-score">SCORE</label>
-                            <input type="number" id="monroe-score">
+                            <label for="player-one-score">SCORE</label>
+                            <input type="number" id="player-one-score">
                         </div>
-                        <div id="form-right-column">
-                            <label for="cinco-team">TEAM</label>
-                            <select id="cinco-team">
+                        <div id="player-two-column">
+                            <label for="player-two-team">TEAM</label>
+                            <select id="player-two-team">
                                 <option value="atl">ATL</option>
                                 <option value="bkn">BKN</option>
                                 <option value="bos">BOS</option>
@@ -120,19 +120,52 @@
                                 <option value="uta">UTA</option>
                                 <option value="was">WAS</option>
                             </select>
-                            <label for="cinco-score">SCORE</label>
-                            <input type="number" id="cinco-score">
+                            <label for="player-two-score">SCORE</label>
+                            <input type="number" id="player-two-score">
                         </div>
                     </div>
                     <hr>
                     <a id="submit">SUBMIT</a>
                 </form>
             </div>
-                <!-- Popup Div Ends Here -->
         </div>
         </div>
     </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDzr8epWVsQC9F61sZfzAWC25oT2mpKUGg",
+          authDomain: "scoreboard-b50c9.firebaseapp.com",
+          databaseURL: "https://scoreboard-b50c9.firebaseio.com",
+          projectId: "scoreboard-b50c9",
+          storageBucket: "scoreboard-b50c9.appspot.com",
+          messagingSenderId: "223594199965",
+          appId: "1:223594199965:web:4a027c82267f35bb468d74",
+          measurementId: "G-R0PDBSWL5R"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        function writeData() {
+            firebase.database().ref("Game").set({
+                playerOneId: 'monroeId',
+                playerTwoId: 'cincoId',
+                playerOneTeam: $('#player-one-team').val(),
+                playerTwoTeam: $('#player-two-team').val(),
+                playerOneScore: $('#player-one-score').val(),
+                playerTwoScore: $('#player-two-score').val(),
+            });
+        }
+
+      </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+
+    <script src="app.js"></script>
+
 </body>
 </html>

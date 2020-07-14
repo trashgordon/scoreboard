@@ -51,6 +51,7 @@ h3#form-versus-text {
     left: 230px;
     z-index: 99;
     font-size: 5em;
+    text-shadow: 3px 3px 6px #000;
 }
 
 hr {
@@ -74,13 +75,13 @@ div#fields-container {
     letter-spacing: 4px;
 }
 
-div#form-left-column {
+div#player-one-column {
     flex-direction: column;
     display: flex;
     text-align: left;
 }
 
-div#form-right-column {
+div#player-two-column {
     display: flex;
     flex-direction: column;
     text-align: right;

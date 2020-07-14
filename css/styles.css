@@ -6,6 +6,7 @@
     font-style: normal;
 
 }
+
 @font-face {
     font-family: 'harabara_maisharabaramaisdemo';
     src: url('../fonts/harabara_mais_demo-webfont.woff2') format('woff2'),
@@ -14,6 +15,7 @@
     font-style: normal;
 
 }
+
 @font-face {
     font-family: 'Subway Ticker Grid';
     src: url('../fonts/SubwayTickerGrid.woff2') format('woff2'),
@@ -78,9 +80,9 @@ div#arena-bg h1 {
 }
 
 div#versus-bg {
-    position: relative;`
-    margin-bottom: -15px;
-    border-top: 75px solid rgba(0,0,0,0.7);
+    position: relative;
+    ` margin-bottom: -15px;
+    border-top: 75px solid rgba(0, 0, 0, 0.7);
     border-right: 50px solid transparent;
     border-left: 50px solid transparent;
     width: 200px;
@@ -105,7 +107,7 @@ div#versus-bg h3 {
 div#monroe-text-bg {
     transform: skew(35deg);
     margin-right: -20px;
-    width:300px;
+    width: 300px;
     background-color: #a31826;
 }
 
@@ -175,7 +177,7 @@ div#home-guest-row {
     display: flex;
     width: 750px;
     font-size: 3em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Subway Ticker Grid';
     letter-spacing: 5px;
     color: red;
 }
@@ -204,7 +206,7 @@ div#scorebox-squares-row p {
     height: 173px;
     padding-top: 27px;
     padding-left: 20px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
     text-shadow: 1px 1px 10px #ffd400;
@@ -215,7 +217,7 @@ div#scorebox-squares-row p {
 
 div.scorebox-square {
     border: 7px solid #ccc;
-    width:  250px;
+    width: 250px;
     height: 200px;
 }
 
@@ -243,7 +245,7 @@ p.total-pts-text {
     margin: 0;
     padding: 10px;
     font-size: 0.7em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Subway Ticker Grid';
     letter-spacing: 5px;
     color: red;
 }
@@ -262,10 +264,9 @@ div.total-pts-square {
 div.total-pts-square p {
     margin: 0;
     padding: 10px;
-    font-family: 'cursed_timer_ulilregular';
-    letter-spacing: 15px;
     color: #d9b504;
     text-align: center;
+    font-family: 'Subway Ticker Grid';
 
 }
 
@@ -287,13 +288,14 @@ div#blowouts-text-row {
     display: flex;
     width: 750px;
 
+
 }
 
 p.blowouts-text {
     margin: 0;
     padding: 10px;
     font-size: 0.7em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Subway Ticker Grid';
     letter-spacing: 5px;
     color: red;
 }
@@ -311,10 +313,9 @@ div.blowouts-square {
 }
 
 div.blowouts-square p {
-    margin: 0;
+    margin: 0px;
     padding: 10px;
-    font-family: 'cursed_timer_ulilregular';
-    letter-spacing: 15px;
+    font-family: 'Subway Ticker Grid';
     color: #d9b504;
     text-align: center;
 
@@ -328,31 +329,29 @@ marquee {
     border-radius: 20px;
     width: 600px;
     padding-top: 6px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 2em;
     font-family: 'Subway Ticker Grid';
     color: red;
 }
 
-/* BOTTOM SECTION ELEMENTS */  
+/* BOTTOM SECTION ELEMENTS */
 button#add-game {
-    border-radius: 4px;
+    border-radius: 10px;
     border-color: #d9b100;
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
-    font-size: 110%;
+    font-size: 30px;
     font-family: 'harabara_maisharabaramaisdemo';
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
+    width: 250px;
+    height: 100px;
 }
- 
+
 /* iPhone XR NEEDS TO BE MODIFIED AFTER ADDING THE NEW SECTIONS ABOVE */
-@media only screen
-    and (min-device-width: 375px)
-    and (min-device-height: 812px)
-    and (-webkit-device-pixel-ratio: 3)
-    and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
 
     body {
         max-height: 100%;
@@ -368,26 +367,26 @@ button#add-game {
         justify-content: center;
         display: flex;
     }
-      
+
     div.box {
         flex-direction: row;
         justify-content: center;
         display: flex;
     }
-      
+
     div.top {
         align-items: flex-end;
         min-height: 200px;
     }
-      
+
     div.middle {
         min-height: 200px;
     }
-      
+
     div.bottom {
         margin-top: 20px;
     }
-      
+
     /* TOP SECTION ELEMENTS */
     div#arena-bg {
         position: relative;
@@ -395,7 +394,7 @@ button#add-game {
         border-bottom: 50px solid #144D91;
         border-left: 25px solid transparent;
     }
-      
+
     div#arena-bg h1 {
         position: absolute;
         margin-top: 2%;
@@ -406,16 +405,16 @@ button#add-game {
         letter-spacing: 4px;
         color: #ccc;
     }
-      
+
     div#versus-bg {
         position: relative;
         margin-bottom: -15px;
-        border-top: 75px solid rgba(0,0,0,0.7);
+        border-top: 75px solid rgba(0, 0, 0, 0.7);
         border-right: 50px solid transparent;
         border-left: 50px solid transparent;
         width: 200px;
     }
-      
+
     div#versus-bg h3 {
         position: absolute;
         margin-top: -37%;
@@ -425,18 +424,18 @@ button#add-game {
         letter-spacing: 4px;
         color: #ccc;
     }
-      
+
     #versus-text {
         z-index: 99;
     }
-      
+
     div#monroe-text-bg {
         transform: skew(35deg);
         margin-right: -0px;
         width: 300px;
         background-color: #A31826;
     }
-      
+
     div#monroe-text-bg p {
         transform: skew(-35deg);
         margin: 0;
@@ -447,14 +446,14 @@ button#add-game {
         letter-spacing: 6px;
         color: #D9B100;
     }
-      
+
     div#cinco-text-bg {
         transform: skew(-35deg);
         margin-left: -0px;
         width: 300px;
         background-color: #3248A8;
     }
-      
+
     div#cinco-text-bg p {
         transform: skew(35deg);
         margin: 0px;
@@ -465,7 +464,7 @@ button#add-game {
         letter-spacing: 6px;
         color: #ccc;
     }
-      
+
     /* MIDDLE SECTION ELEMENTS */
     div#scoreboard-bg {
         position: relative;
@@ -476,7 +475,7 @@ button#add-game {
         border-right: 100px solid transparent;
         border-left: 100px solid transparent;
     }
-      
+
     img#monroe-avatar {
         position: absolute;
         margin-top: -50%;
@@ -484,7 +483,7 @@ button#add-game {
         width: 200px;
         height: 200px;
     }
-      
+
     img#cinco-avatar {
         position: absolute;
         margin-top: -50%;
@@ -492,7 +491,7 @@ button#add-game {
         width: 200px;
         height: 200px;
     }
-      
+
     div#home-guest-row {
         position: absolute;
         flex-direction: row;
@@ -506,15 +505,15 @@ button#add-game {
         letter-spacing: 5px;
         color: #ccc;
     }
-      
+
     p#home-text {
         margin-left: 120px;
     }
-      
+
     p#guest-text {
         margin-right: 100px;
     }
-      
+
     div#scorebox-squares-row {
         position: absolute;
         flex-direction: row;
@@ -523,7 +522,7 @@ button#add-game {
         margin-top: -55%;
         width: 100%;
     }
-      
+
     div#scorebox-squares-row p {
         margin: 0;
         height: 173px;
@@ -536,11 +535,13 @@ button#add-game {
         letter-spacing: 15px;
         color: #D9B504;
     }
+
     div.scorebox-square {
         border: 7px solid #ccc;
-        width:  250px;
+        width: 250px;
         height: 200px;
     }
+
     marquee {
         position: absolute;
         overflow: hidden;
@@ -553,7 +554,7 @@ button#add-game {
         font-family: 'Subway Ticker Grid';
         color: red;
     }
-      
+
     /* BOTTOM SECTION ELEMENTS */
     button#add-game {
         border-radius: 20px;

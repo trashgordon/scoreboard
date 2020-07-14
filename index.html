@@ -19,15 +19,19 @@
         </div>
         <!-- Middle section starts here -->
         <div class="middle box">
-            <div id="scoreboard-bg">
-                <div class="avatars">
-                    <img id="monroe-avatar" src="img/monroe-ava.png" alt="Monroe Avatar">
-                    <img id="cinco-avatar" src="img/cinco-ava.png" alt="Monroe Avatar">
+            <div id="scoreboard-container">
+
+                <img id="scoreboard-bg" src="img/trapezoid-large.png">
+                <div id="avatars-row">
+                    <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
+                    <img class="avatar" src="img/ava-cinco.png" alt="Monroe Avatar">
                 </div>
+
                 <div id="home-guest-row">
                     <p id="home-text">HOME</p>
                     <p id="guest-text">GUEST</p>
                 </div>
+
                 <div id="scorebox-squares-row">
                     <div class="scorebox-square">
                         <p id="home-wins">00</p>
@@ -36,7 +40,41 @@
                         <p id="guest-wins">00</p>
                     </div>
                 </div>
+
+                <div id="total-pts-row">
+                    <div class="total-pts-col">
+                        <p class="total-pts-text">TOT PTS</p>
+                        <div class="total-pts-square">
+                            <p id="p1-tot-pts">0</p>
+                        </div>
+                    </div>
+
+                    <div class="total-pts-col">
+                        <p class="total-pts-text">TOT PTS</p>
+                        <div class="total-pts-square">
+                            <p id="p2-tot-pts">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="blowouts-row">
+                    <div class="blowouts-col">
+                        <p class="blowouts-text">BLOWOUTS</p>
+                        <div class="blowouts-square">
+                            <p id="p1-blowouts">0</p>
+                        </div>
+                    </div>
+
+                    <div class="blowouts-col">
+                        <p class="blowouts-text">BLOWOUTS</p>
+                        <div class="blowouts-square">
+                            <p id="p2-blowouts">0</p>
+                        </div>
+                    </div>
+                </div>
+
                 <marquee>NO GAME STATS TO DISPLAY</marquee>
+
             </div>
         </div>
         <!-- Bottom section starts here -->
@@ -44,7 +82,7 @@
             <button id="add-game" onclick="showForm()">ADD GAME</button>
             <div id="add-game-form">
                 <form action="#" id="form" method="post" name="form">
-                    <img id="close" src="img/close-button.png" onclick ="hideForm()">
+                    <img id="close" src="img/btn-close.png" onclick ="hideForm()">
                     <h2>GAME STATS</h2>
                     <hr>
                     <div id="fields-container">
@@ -133,39 +171,20 @@
     </div>
     
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
 
     <script>
         const firebaseConfig = {
-          apiKey: "AIzaSyDzr8epWVsQC9F61sZfzAWC25oT2mpKUGg",
-          authDomain: "scoreboard-b50c9.firebaseapp.com",
-          databaseURL: "https://scoreboard-b50c9.firebaseio.com",
-          projectId: "scoreboard-b50c9",
-          storageBucket: "scoreboard-b50c9.appspot.com",
-          messagingSenderId: "223594199965",
-          appId: "1:223594199965:web:4a027c82267f35bb468d74",
-          measurementId: "G-R0PDBSWL5R"
+
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-
-        function writeData() {
-            firebase.database().ref("Game").set({
-                playerOneId: 'monroeId',
-                playerTwoId: 'cincoId',
-                playerOneTeam: $('#player-one-team').val(),
-                playerTwoTeam: $('#player-two-team').val(),
-                playerOneScore: $('#player-one-score').val(),
-                playerTwoScore: $('#player-two-score').val(),
-            });
-        }
-
-      </script>
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 
 </body>
 </html>

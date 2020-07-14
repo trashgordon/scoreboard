@@ -79,6 +79,14 @@ div#arena-bg h1 {
     color: #ccc;
 }
 
+img.twoklogo {
+
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-left: 83px;
+}
+
 div#versus-bg {
     position: relative;
     ` margin-bottom: -15px;

@@ -53,11 +53,16 @@ const state = {
 const createGame = () => ({
     playerOneId: 'monroeId',
     playerTwoId: 'cincoId',
-    playerOneTeam: $('#monroe-team').val(),
-    playerTwoTeam: $('#cinco-team').val(),
-    playerOneScore: $('#monroe-score').val(),
-    playerTwoScore: $('#cinco-score').val(),
+    playerOneTeam: $('#player-one-team').val(),
+    playerTwoTeam: $('#player-two-team').val(),
+    playerOneScore: $('#player-one-score').val(),
+    playerTwoScore: $('#player-two-score').val(),
 });
+
+
+// TODO make player name dynamic
+// $("div#monroe-text-bg > p").text(playerOne.name.toUpperCase());
+
 
 // Show and hide game entry form
 function showForm() {
@@ -69,7 +74,7 @@ function hideForm() {
 
 // Submit game entry form
 $('a#submit').on('click', () => {
-    const game = createGame();
+    const game = writeData();
 
     hideForm();
     updateWins(game);
@@ -103,29 +108,19 @@ function displayWins(game) {
     const playerOne = users.find(user => user.id === playerOneId)
     const playerTwo = users.find(user => user.id === playerTwoId)
 
-    // TODO make player name dynamic
-    // $('#player-one-name').text(playerOne.name.toUpperCase());
-
     // TODO refactor
     const playerOneTotalWinsStr = ('00' + playerOne.totalWins.toString()).slice(-2);
-    const playerTwoTotaWinsStr = ('00' + playerTwo.totalWins.toString()).slice(-2);
+    const playerTwoTotalWinsStr = ('00' + playerTwo.totalWins.toString()).slice(-2);
     
-    $("#left-score").text(playerOneTotalWinsStr);
-    $("#right-score").text(playerTwoTotaWinsStr);
+    $("#home-wins").text(playerOneTotalWinsStr);
+    $("#guest-wins").text(playerTwoTotalWinsStr);
 }
 
 // Updates the scrolling marquee under the scoreboard
 function updateMarquee(game) {
     const { playerOneScore, playerTwoScore, playerOneTeam, playerTwoTeam } = game;
-    const marquee = document.querySelector("marquee");
-    const text = `
+    $('marquee').text(`
         ${playerOneTeam.toUpperCase()} VS ${playerTwoTeam.toUpperCase()}
         : ${playerOneScore} - ${playerTwoScore}
-    `;
-
-    // marquee.innerHTML = playerOneTeam.toUpperCase() + " VS " +
-    //                     playerTwoTeam.toUpperCase() + ": " +
-    //                     playerOneScore + "-" + playerTwoScore;
-
-    marquee.text(text);
+    `);
 }

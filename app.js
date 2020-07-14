@@ -1,68 +1,36 @@
+// Database & State
+const db = firebase.database();
+const dbGames = db.ref('/games/');
+const dbUsers = db.ref('/users/');
+const state = [];
 
-// Database
-const db = firebase.database().ref();
-const dbGames = firebase.database().ref('/games/');
-const dbUsers = firebase.database().ref('/users/');
-const state = []
-// // API call that loads data
+// API call that loads data
 dbGames.on('value', function(snapshot) {
     state.length = 0;
     snapshot.forEach(function(childSnapshot) {
         state.push(childSnapshot.val());
-        calcWins();
+        calcTotalWins();
+        calcTotalPoints();
+        calcBlowouts();
         updateMarquee();
     });
 });    
 
-console.log(state);
-// iterate through the games and calculate totalWins for each user
-
-function calcWins() {
-    const p1Score = state.map(({playerOneScore}) => playerOneScore);
-    const p2Score = state.map(({playerTwoScore}) => playerTwoScore);
-
-    let p1Wins = 0;
-    let p2Wins = 0;
-
-    for (let i = 0; i < p1Score.length; i++) {
-
-        if (parseInt(p1Score[i]) > parseInt(p2Score[i])) {
-            p1Wins++;
-        } else {
-            p2Wins++;
-        }
-    }
-    displayWins(p1Wins, p2Wins);
-    calcTotalPoints();
-
+// Show and hide game entry form
+function showForm() {
+    $('#add-game-form').show();
+}
+function hideForm() {
+    $('#add-game-form').hide();
 }
 
-function calcTotalPoints() {
-    const p1Score = state.map(({playerOneScore}) => playerOneScore);
-    const p2Score = state.map(({playerTwoScore}) => playerTwoScore);
+// Submit game entry form
+$('a#submit').on('click', () => {
+    writeGame();
+    hideForm();
+});
 
-    const p1TotalPoints = p1Score.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    const p2TotalPoints = p2Score.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-
-    console.log(p1TotalPoints);
-    console.log(p2TotalPoints);
-}
-
-
-// games.reduce((acc, cur) => {
-//     // sum up all the wins - maybe use getWinner function
-// }, { playerOneWins: 0, playerTwoWins: 0 })
-
-// Game factory creates game
-// const createGame = () => ({
-//         playerOneId: 'monroeId',
-//         playerTwoId: 'cincoId',
-//         playerOneTeam: $('#player-one-team').val(),
-//         playerTwoTeam: $('#player-two-team').val(),
-//         playerOneScore: $('#player-one-score').val(),
-//         playerTwoScore: $('#player-two-score').val(),
-// });
-
+// Writes a new game to the database
 function writeGame()  {
     dbGames.push({
         playerOneId: 'monroeId',
@@ -73,60 +41,96 @@ function writeGame()  {
         playerTwoScore: $('#player-two-score').val(),
 })}
 
-// TODO make player name dynamic
-// $("div#monroe-text-bg > p").text(playerOne.name.toUpperCase());
+// Gets all scores from state
+function getScores() {
+    const p1Scores = state.map(function({playerOneScore}) {
+        return parseInt(playerOneScore, 10);
+    });
+    const p2Scores = state.map(function({playerTwoScore}) {
+        return parseInt(playerTwoScore, 10);
+    });
 
-
-// Show and hide game entry form
-function showForm() {
-    document.getElementById('add-game-form').style.display = 'block';
-}
-function hideForm() {
-    document.getElementById('add-game-form').style.display = 'none';
-}
-
-// Submit game entry form
-$('a#submit').on('click', () => {
-    writeGame();
-    hideForm();
-});
-
-// Determines the winner of a game and returns winner ID
-function getWinnerId(game) {
-    const finalScoreOneInt = parseInt(game.playerOneScore, 10);
-    const finalScoreTwoInt = parseInt(game.playerTwoScore, 10);
-
-    return finalScoreOneInt > finalScoreTwoInt
-        ? game.playerOneId
-        : game.playerTwoId;
+    return [p1Scores, p2Scores];
 }
 
-// Update the total wins prop on the user
-function updateWins(playerOneTeam) {
-    console.log(playerOneTeam);
-    const winnerId = getWinnerId(game);
-    const winner = state.users.find(user => user.id === winnerId)
+// Calculates total number of wins for each user
+function calcTotalWins() {
+    const scores = getScores();
+    const p1Scores = scores[0];
+    const p2Scores = scores[1];
 
-    winner.totalWins++
+    let p1Wins = 0;
+    let p2Wins = 0;
+
+    // Iterates through scores and calculates winner 
+    for (let i = 0; i < p1Scores.length; i++) {
+        p1Scores[i] > p2Scores[i] ? p1Wins++ : p2Wins++;
+    }
+
+    displayWins(p1Wins, p2Wins);
 }
 
-// Shows the wins on the scoreboard
-function displayWins(playerOneWins, playerTwoWins) {
-    // const { users } = state;
-    // const { playerOneId, playerTwoId } = game;
+// Calculates total number of points for each user
+function calcTotalPoints() {
+    const scores = getScores();
+    const p1Scores = scores[0];
+    const p2Scores = scores[1];
 
-    // const playerOne = users.find(user => user.id === playerOneId)
-    // const playerTwo = users.find(user => user.id === playerTwoId)
+    const p1TotalPoints = p1Scores.reduce(function(a, b) {
+        return a + b;
+    }, 0);
 
-    // // TODO refactor
-    const playerOneTotalWinsStr = ('00' + playerOneWins.toString()).slice(-2);
-    const playerTwoTotalWinsStr = ('00' + playerTwoWins.toString()).slice(-2);
+    const p2TotalPoints = p2Scores.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+
+     displayTotalPoints(p1TotalPoints, p2TotalPoints);
+}
+
+// Calculates number of blowouts for each user
+function calcBlowouts() {
+    const scores = getScores();
+    const p1Scores = scores[0];
+    const p2Scores = scores[1];
+
+    let p1Blowouts = 0;
+    let p2Blowouts = 0;
+
+    // Iterates through scores and determines if a game was blowout
+    // blowout = score differential of at least 20 points
+    for (let i = 0; i < p1Scores.length; i++) {
+
+        if ((p1Scores[i] - p2Scores[i]) >= 20) {
+            p1Blowouts++;
+        } else if ((p2Scores[i] - p1Scores[i]) >= 20) {
+            p2Blowouts++;
+        }
+    }
+
+    displayBlowouts(p1Blowouts, p2Blowouts);
+}
+
+// Displays total wins for each player on scoreboard
+function displayWins(p1TotalWins, p2TotalWins) {
+    const p1TotalWinsStr = ('00' + p1TotalWins.toString()).slice(-2);
+    const p2TotalWinsStr = ('00' + p2TotalWins.toString()).slice(-2);
     
-    $("#home-wins").text(playerOneTotalWinsStr);
-    $("#guest-wins").text(playerTwoTotalWinsStr);
+    $("#home-wins").text(p1TotalWinsStr);
+    $("#guest-wins").text(p2TotalWinsStr);
 }
 
-// Updates the scrolling marquee under the scoreboard
+// Displays total points for each player on scoreboard
+function displayTotalPoints(p1TotalPoints, p2TotalPoints) {
+    $("#p1-tot-pts").text(p1TotalPoints);
+    $("#p2-tot-pts").text(p2TotalPoints);
+}
+
+function displayBlowouts(p1Blowouts, p2Blowouts) {
+    $("#p1-blowouts").text(p1Blowouts);
+    $("#p2-blowouts").text(p2Blowouts);
+}
+
+// Displays teams & scores of latest game on scrolling marquee
 function updateMarquee() {
     dbGames.limitToLast(1).on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
@@ -138,3 +142,25 @@ function updateMarquee() {
             `);
     });
 })}
+
+// Determines the winner of a game and returns winner ID
+// function getWinnerId(game) {
+//     const finalScoreOneInt = parseInt(game.playerOneScore, 10);
+//     const finalScoreTwoInt = parseInt(game.playerTwoScore, 10);
+
+//     return finalScoreOneInt > finalScoreTwoInt
+//         ? game.playerOneId
+//         : game.playerTwoId;
+// }
+
+// Update the total wins prop on the user
+// function updateWins(playerOneTeam) {
+//     console.log(playerOneTeam);
+//     const winnerId = getWinnerId(game);
+//     const winner = state.users.find(user => user.id === winnerId)
+
+//     winner.totalWins++
+// }
+
+// TODO make player name dynamic
+// $("div#monroe-text-bg > p").text(playerOne.name.toUpperCase());

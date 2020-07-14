@@ -47,7 +47,7 @@ div.box {
 
 div.top {
     align-items: flex-end;
-    min-height: 200px;
+    min-height: 100px;
 }
 
 div.middle {
@@ -78,7 +78,7 @@ div#arena-bg h1 {
 }
 
 div#versus-bg {
-    position: relative;
+    position: relative;`
     margin-bottom: -15px;
     border-top: 75px solid rgba(0,0,0,0.7);
     border-right: 50px solid transparent;
@@ -139,27 +139,31 @@ div#cinco-text-bg p {
 }
 
 /* MIDDLE SECTION ELEMENTS */
-div#scoreboard-bg {
+div#scoreboard-container {
     position: relative;
+    display: flex;
+    justify-content: center;
     margin-top: 35px;
-    width: 700px;
-    border-top: 500px solid rgba(0,0,0,0.7);
-    border-right: 100px solid transparent;
-    border-left: 100px solid transparent;
+    width: 900px;
+    height: 600px;
 }
 
-img#monroe-avatar {
+img#scoreboard-bg {
     position: absolute;
-    margin-top: -50%;
-    margin-left: -35%;
-    width: 250px;
-    height: 250px;
+    width: 900px;
+    height: 600px;
+    opacity: 0.7;
 }
 
-img#cinco-avatar {
+div#avatars-row {
     position: absolute;
-    margin-top: -50%;
-    margin-left: 97%;
+    display: flex;
+    justify-content: space-between;
+    width: 1150px;
+    margin-top: 200px;
+}
+
+img.avatar {
     width: 250px;
     height: 250px;
 }
@@ -169,30 +173,30 @@ div#home-guest-row {
     flex-direction: row;
     justify-content: space-between;
     display: flex;
-    margin-top: -70%;
-    width: 100%;
+    width: 750px;
     font-size: 3em;
     font-family: 'harabara_maisharabaramaisdemo';
-    font-style: italic;
     letter-spacing: 5px;
-    color: #ccc;
+    color: red;
 }
 
 p#home-text {
+    margin: 20px;
     margin-left: 120px;
 }
 
 p#guest-text {
-    margin-right: 100px;
+    margin-top: 20px;
+    margin-right: 90px;
 }
 
 div#scorebox-squares-row {
     position: absolute;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     display: flex;
-    margin-top: -55%;
-    width: 100%;
+    margin-top: 80px;
+    width: 80%;
 }
 
 div#scorebox-squares-row p {
@@ -215,12 +219,114 @@ div.scorebox-square {
     height: 200px;
 }
 
+div#total-pts-row {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 300px;
+    width: 700px;
+    font-size: 2em;
+    text-align: center;
+}
+
+div#total-pts-text-row {
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    width: 750px;
+
+}
+
+p.total-pts-text {
+    margin: 0;
+    padding: 10px;
+    font-size: 0.7em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 5px;
+    color: red;
+}
+
+div.total-pts-col {
+    display: flex;
+    flex-direction: column;
+}
+
+div.total-pts-square {
+    border: 4px solid #ccc;
+    width: 150px;
+    background-color: black;
+}
+
+div.total-pts-square p {
+    margin: 0;
+    padding: 10px;
+    font-family: 'cursed_timer_ulilregular';
+    letter-spacing: 15px;
+    color: #d9b504;
+    text-align: center;
+
+}
+
+div#blowouts-row {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 415px;
+    width: 530px;
+    font-size: 2em;
+    text-align: center;
+}
+
+div#blowouts-text-row {
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    width: 750px;
+
+}
+
+p.blowouts-text {
+    margin: 0;
+    padding: 10px;
+    font-size: 0.7em;
+    font-family: 'harabara_maisharabaramaisdemo';
+    letter-spacing: 5px;
+    color: red;
+}
+
+div.blowouts-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.blowouts-square {
+    border: 4px solid #ccc;
+    width: 75px;
+    background-color: black;
+}
+
+div.blowouts-square p {
+    margin: 0;
+    padding: 10px;
+    font-family: 'cursed_timer_ulilregular';
+    letter-spacing: 15px;
+    color: #d9b504;
+    text-align: center;
+
+}
+
 marquee {
     position: absolute;
+    left: 150px;
     overflow: hidden;
-    margin-top: -100px;
+    margin-top: 540px;
     border-radius: 20px;
-    width: 100%;
+    width: 600px;
     padding-top: 6px;
     background-color: rgba(0,0,0,0.8);
     font-size: 2em;
@@ -241,185 +347,202 @@ button#add-game {
     color: #d9b100;
 }
  
-/* iPhone XR */
+/* iPhone XR NEEDS TO BE MODIFIED AFTER ADDING THE NEW SECTIONS ABOVE */
 @media only screen
-    and (min-device-width: 414px)
-    and (min-device-height: 896px)
-    and (-webkit-device-pixel-ratio: 2)
+    and (min-device-width: 375px)
+    and (min-device-height: 812px)
+    and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) {
     body {
         max-height: 100%;
-        background-image: url("/img/mobile-bg.jpg");
+        background-image: url("../img/desktop-bg-min.jpg");
+        background-position: center;
         background-repeat: no-repeat;
         background-color: #000;
-        background-position: center;
-        background-position-y: 15%;
     }
-
+    /* Site layout is three rows within a container that spans the body */
+    div#flexbox-container {
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+    }
     div.box {
         flex-direction: row;
         justify-content: center;
         display: flex;
     }
-
     div.top {
         align-items: flex-end;
-        min-height: 100px;
+        min-height: 200px;
     }
-
+    div.middle {
+        min-height: 200px;
+    }
+    div.bottom {
+        margin-top: 20px;
+    }
     /* TOP SECTION ELEMENTS */
     div#arena-bg {
-        display: none;
+        position: relative;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid #144D91;
+        border-left: 25px solid transparent;
     }
-
     div#arena-bg h1 {
-        display: none;
+        position: absolute;
+        margin-top: 2%;
+        margin-left: 15%;
+        font-size: 2em;
+        font-family: 'harabara_maisharabaramaisdemo';
+        text-shadow: 2px 2px 3px #212585;
+        letter-spacing: 4px;
+        color: #ccc;
     }
-
     div#versus-bg {
-        display: none;
+        position: relative;
+        margin-bottom: -15px;
+        border-top: 75px solid rgba(0,0,0,0.7);
+        border-right: 50px solid transparent;
+        border-left: 50px solid transparent;
+        width: 200px;
     }
-
     div#versus-bg h3 {
-        display: none;
-
+        position: absolute;
+        margin-top: -37%;
+        margin-left: 27%;
+        font-size: 4em;
+        font-family: 'harabara_maisharabaramaisdemo';
+        letter-spacing: 4px;
+        color: #ccc;
     }
-
     #versus-text {
         z-index: 99;
     }
-
-
     div#monroe-text-bg {
-        transform: none;
-        margin-left: 60px;
-        width: 180px;
-        background-color: transparent;
+        transform: skew(35deg);
+        margin-right: -0px;
+        width:300px;
+        background-color: #A31826;
     }
-
     div#monroe-text-bg p {
-        transform: none;
+        transform: skew(-35deg);
         margin: 0;
-        font-size: 30px;
+        font-size: 50px;
         font-family: 'harabara_maisharabaramaisdemo';
         text-align: center;
-        text-shadow: 2px 2px 3px #212585;
+        text-shadow: 2px 2px 3px #6E1501;
         letter-spacing: 6px;
-        color: #b0b0b0;
+        color: #D9B100;
     }
-
     div#cinco-text-bg {
-        transform: none;
-        margin-left: 80px;
-        margin-right: 65px;
-        width: 125px;
-        background-color: transparent;
+        transform: skew(-35deg);
+        margin-left: -0px;
+        width: 300px;
+        background-color: #3248A8;
     }
-
     div#cinco-text-bg p {
-        transform: none;
-        margin: 0;
-        font-size: 30px;
+        transform: skew(35deg);
+        margin: 0px;
+        font-size: 50px;
         font-family: 'harabara_maisharabaramaisdemo';
         text-align: center;
         text-shadow: 2px 2px 3px #212585;
         letter-spacing: 6px;
-        color: #b0b0b0;
+        color: #ccc;
     }
-
     /* MIDDLE SECTION ELEMENTS */
     div#scoreboard-bg {
         position: relative;
         margin-top: 35px;
-        width: 200px;
-        border-top: 400px solid rgba(0, 0, 0, 0.7);
+        width: 700px;
+        height:700px;
+        border-top: 500px solid rgba(0,0,0,0.7);
         border-right: 100px solid transparent;
         border-left: 100px solid transparent;
     }
-
     img#monroe-avatar {
         position: absolute;
-        margin-top: -179%;
-        margin-left: -75%;
+        margin-top: -50%;
+        margin-left: -20%;
         width: 200px;
-        height: 180px;
-        z-index: 3;
+        height: 200px;
     }
-
     img#cinco-avatar {
         position: absolute;
-        margin-top: -179%;
-        margin-left: 47%;
+        margin-top: -50%;
+        margin-left: 90%;
         width: 200px;
-        height: 180px;
-        z-index: 3;
+        height: 200px;
     }
-
     div#home-guest-row {
-        display: none;
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-between;
+        display: flex;
+        margin-top: -70%;
+        width: 100%;
+        font-size: 3em;
+        font-family: 'harabara_maisharabaramaisdemo';
+        font-style: italic;
+        letter-spacing: 5px;
+        color: #ccc;
     }
-
     p#home-text {
         margin-left: 120px;
     }
-
     p#guest-text {
         margin-right: 100px;
     }
-
     div#scorebox-squares-row {
         position: absolute;
         flex-direction: row;
         justify-content: space-evenly;
         display: flex;
-        margin-top: 50%;
+        margin-top: -55%;
         width: 100%;
-        bottom: 200px;
     }
-
     div#scorebox-squares-row p {
         margin: 0;
         height: 173px;
         padding-top: 27px;
         padding-left: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
-        font-size: 6em;
+        background-color: rgba(0,0,0,0.8);
+        font-size: 10em;
         font-family: 'cursed_timer_ulilregular';
-        text-shadow: 1px 1px 10px #ffd400;
+        text-shadow: 1px 1px 10px #FFD400;
         letter-spacing: 15px;
-        color: #d9b504;
-
+        color: #D9B504;
     }
-
     div.scorebox-square {
         border: 7px solid #ccc;
-        width: 250px;
+        width:  250px;
         height: 200px;
     }
-
     marquee {
         position: absolute;
         overflow: hidden;
         margin-top: -100px;
         border-radius: 20px;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        padding-top: 6px;
+        background-color: rgba(0,0,0,0.8);
         font-size: 2em;
-        font-family: 'subway_ticker_gridregular';
+        font-family: 'Subway Ticker Grid';
         color: red;
     }
-
     /* BOTTOM SECTION ELEMENTS */
     button#add-game {
-        border-radius: 4px;
-        border-color: #d9b100;
-        padding: 10px;
+        border-radius: 20px;
+        border-color: #D9B100;
+        padding: 30px;
         background: rgba(0, 0, 0, 0.8);
-        font-size: 30px;
+        font-size: 80px;
         font-family: 'harabara_maisharabaramaisdemo';
         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         letter-spacing: 5px;
-        color: #d9b100;
-        width: 250px;
+        color: #D9B100;
+        width: 550px;
+        margin: 90px;
+        border-width:5px;
     }
 }

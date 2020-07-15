@@ -4,7 +4,6 @@
         url('../fonts/ursedtimerulil-aznm-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -13,7 +12,6 @@
         url('../fonts/harabara_mais_demo-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -24,7 +22,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 
 body {
     max-height: 100%;
@@ -81,7 +78,7 @@ div#arena-bg h1 {
 
 div#versus-bg {
     position: relative;
-    ` margin-bottom: -15px;
+    margin-bottom: -15px;
     border-top: 75px solid rgba(0, 0, 0, 0.7);
     border-right: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -96,13 +93,11 @@ div#versus-bg h3 {
     font-family: 'harabara_maisharabaramaisdemo';
     letter-spacing: 4px;
     color: #ccc;
-
 }
 
 #versus-text {
     z-index: 99;
 }
-
 
 div#monroe-text-bg {
     transform: skew(35deg);
@@ -150,6 +145,11 @@ div#scoreboard-container {
     height: 600px;
 }
 
+img#twok-logo {
+    z-index: 50;
+    margin-top: 260px;
+}
+
 img#scoreboard-bg {
     position: absolute;
     width: 900px;
@@ -183,12 +183,14 @@ div#home-guest-row {
 }
 
 p#home-text {
+    margin: 0;
     margin-top: 20px;
     margin-left: 120px;
     padding-left: 5px;
 }
 
 p#guest-text {
+    margin: 0;
     margin-top: 20px;
     margin-right: 95px;
 }
@@ -207,7 +209,6 @@ div#scorebox-squares-row p {
     height: 173px;
     padding-top: 27px;
     padding-left: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
     font-size: 10em;
     font-family: 'cursed_timer_ulilregular';
     text-shadow: 1px 1px 10px #ffd400;
@@ -217,9 +218,11 @@ div#scorebox-squares-row p {
 }
 
 div.scorebox-square {
-    border: 7px solid #ccc;
+    border: 7px solid #333;
+    box-shadow: inset -2px -2px #666;
     width: 250px;
     height: 200px;
+    background-color: black;
 }
 
 div#total-pts-row {
@@ -257,7 +260,8 @@ div.total-pts-col {
 }
 
 div.total-pts-square {
-    border: 4px solid #ccc;
+    border: 4px solid #333;
+    box-shadow: inset -1px -1px #666;
     width: 130px;
     background-color: black;
 }
@@ -265,7 +269,7 @@ div.total-pts-square {
 div.total-pts-square p {
     margin: 0;
     padding: 10px;
-    font-family: 'Subway Ticker Grid';
+    font-family: 'cursed_timer_ulilregular';
     color: #d9b504;
     text-align: center;
 }
@@ -287,8 +291,6 @@ div#blowouts-text-row {
     justify-content: center;
     display: flex;
     width: 750px;
-
-
 }
 
 p.blowouts-text {
@@ -306,7 +308,8 @@ div.blowouts-col {
 }
 
 div.blowouts-square {
-    border: 4px solid #ccc;
+    border: 4px solid #333;
+    box-shadow: inset -1px -1px #666;
     width: 130px;
     background-color: black;
 }
@@ -314,7 +317,7 @@ div.blowouts-square {
 div.blowouts-square p {
     margin: 0px;
     padding: 10px;
-    font-family: 'Subway Ticker Grid';
+    font-family: 'cursed_timer_ulilregular';
     color: #d9b504;
     text-align: center;
 }
@@ -334,7 +337,7 @@ marquee {
 }
 
 /* BOTTOM SECTION ELEMENTS */
-button#add-game {
+button#add-game-btn {
     border-radius: 10px;
     border-color: #d9b100;
     padding: 10px;
@@ -347,6 +350,110 @@ button#add-game {
     width: 250px;
     height: 100px;
 }
+
+/* button#add-game-btn:hover {
+    color: red;
+} */
+
+//* Bob */
+@-webkit-keyframes hvr-bob {
+    0% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    50% {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes hvr-bob {
+    0% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    50% {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @-webkit-keyframes hvr-bob-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes hvr-bob-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  .hvr-bob {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+    -webkit-animation-name: hvr-bob-float, hvr-bob;
+    animation-name: hvr-bob-float, hvr-bob;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+  }
+
+  /* Bounce In */
+.hvr-bounce-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  }
+  
+  /* Bounce Out */
+  .hvr-bounce-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  }
+  
 
 /* iPhone XR NEEDS TO BE MODIFIED AFTER ADDING THE NEW SECTIONS ABOVE */
 @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {

@@ -192,9 +192,10 @@ div#home-guest-row {
     display: flex;
     width: 750px;
     font-size: 2.5em;
-    font-family: 'Subway Ticker Grid';
+    font-family: 'Sans serif';
+    font-weight: 900;
     letter-spacing: 5px;
-    color: red;
+    color: #ccc;
 }
 
 p#home-text {

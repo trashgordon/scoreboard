@@ -16,9 +16,15 @@ dbGames.on('value', function(snapshot) {
     });
 });    
 
+$("#add-game-btn").hover(function() {
+    $(this).addClass("hvr-bob");
+    }, function() {
+        $(this).removeClass("hvr-bob");
+});
+
 // Show and hide game entry form
 function showForm() {
-    $('#add-game-form').show();
+    $('#add-game-form').addClass('hvr-bounce-in').show();
 }
 function hideForm() {
     $('#add-game-form').hide();

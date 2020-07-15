@@ -192,7 +192,7 @@ div#home-guest-row {
     display: flex;
     width: 750px;
     font-size: 2.5em;
-    font-family: 'Sans serif';
+    font-family: 'Archivo Black', sans-serif;
     font-weight: 900;
     letter-spacing: 5px;
     color: #ccc;
@@ -265,8 +265,8 @@ p.total-pts-text {
     margin: 0;
     padding: 10px;
     font-size: 0.7em;
-    font-family: 'Subway Ticker Grid';
-    color: red;
+    font-family: 'Archivo Black', sans-serif;
+    color: #ccc;
 }
 
 div.total-pts-col {
@@ -313,8 +313,8 @@ p.blowouts-text {
     margin: 0;
     padding: 10px;
     font-size: 0.7em;
-    font-family: 'Subway Ticker Grid';
-    color: red;
+    font-family: 'Archivo Black', sans-serif;
+    color: #ccc;
 }
 
 div.blowouts-col {
@@ -374,52 +374,63 @@ button#add-game-btn {
 //* Bob */
 @-webkit-keyframes hvr-bob {
     0% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
+
     50% {
-      -webkit-transform: translateY(-4px);
-      transform: translateY(-4px);
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
     }
+
     100% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
-  }
-  @keyframes hvr-bob {
+}
+
+@keyframes hvr-bob {
     0% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
+
     50% {
-      -webkit-transform: translateY(-4px);
-      transform: translateY(-4px);
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
     }
+
     100% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
-  }
-  @-webkit-keyframes hvr-bob-float {
+}
+
+@-webkit-keyframes hvr-bob-float {
     100% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
-  }
-  @keyframes hvr-bob-float {
+}
+
+@keyframes hvr-bob-float {
     100% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
     }
-  }
-  .hvr-bob {
+}
+
+.hvr-bob {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  }
-  .hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+}
+
+.hvr-bob:hover,
+.hvr-bob:focus,
+.hvr-bob:active {
     -webkit-animation-name: hvr-bob-float, hvr-bob;
     animation-name: hvr-bob-float, hvr-bob;
     -webkit-animation-duration: .3s, 1.5s;
@@ -434,9 +445,9 @@ button#add-game-btn {
     animation-fill-mode: forwards;
     -webkit-animation-direction: normal, alternate;
     animation-direction: normal, alternate;
-  }
+}
 
-  /* Bounce In */
+/* Bounce In */
 .hvr-bounce-in {
     display: inline-block;
     vertical-align: middle;
@@ -445,16 +456,19 @@ button#add-game-btn {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
-  }
-  .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+}
+
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-  }
-  
-  /* Bounce Out */
-  .hvr-bounce-out {
+}
+
+/* Bounce Out */
+.hvr-bounce-out {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -462,14 +476,17 @@ button#add-game-btn {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
-  }
-  .hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {
+}
+
+.hvr-bounce-out:hover,
+.hvr-bounce-out:focus,
+.hvr-bounce-out:active {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-  }
-  
+}
+
 
 /* iPhone XR NEEDS TO BE MODIFIED AFTER ADDING THE NEW SECTIONS ABOVE */
 @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -691,4 +708,50 @@ button#add-game-btn {
         margin: 90px;
         border-width: 5px;
     }
+}
+
+
+//ANimations
+
+
+.name-btn {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.name-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.name-btn:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+
+.name-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+
+.name-btn:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
 }

@@ -1,3 +1,7 @@
+/** ************** ***
+    EMBEDDED FONTS
+*** ************** **/
+
 @font-face {
     font-family: 'cursed_timer_ulilregular';
     src: url('../fonts/cursedtimerulil-aznm-webfont.woff2') format('woff2'),
@@ -23,6 +27,10 @@
     font-display: swap;
 }
 
+/** ************************* ***
+    MAIN CONTAINERS AND BOXES
+*** ************************* **/
+
 body {
     max-height: 100%;
     background-image: url("../img/desktop-bg-resized.jpg");
@@ -31,7 +39,6 @@ body {
     background-color: #000;
 }
 
-/* Site layout is three rows within a container that spans the body */
 div#flexbox-container {
     flex-direction: column;
     justify-content: center;
@@ -57,7 +64,12 @@ div.bottom {
     margin-top: 20px;
 }
 
-/* TOP SECTION ELEMENTS */
+/** **************** ***
+    TOP BOX ELEMENTS
+*** **************** **/
+
+/** ARENA SECTION **/
+
 div#arena-bg {
     position: relative;
     border-right: 25px solid transparent;
@@ -76,13 +88,7 @@ div#arena-bg h1 {
     color: #ccc;
 }
 
-img.twoklogo {
-
-    position: relative;
-    width: 150px;
-    height: 150px;
-    margin-left: 83px;
-}
+/** VERSUS SECTION **/
 
 div#versus-bg {
     position: relative;
@@ -106,6 +112,8 @@ div#versus-bg h3 {
 #versus-text {
     z-index: 99;
 }
+
+/** PLAYER NAMES **/
 
 div#monroe-text-bg {
     transform: skew(35deg);
@@ -143,7 +151,10 @@ div#cinco-text-bg p {
     color: #ccc;
 }
 
-/* MIDDLE SECTION ELEMENTS */
+/** ************************************************** ***
+    MIDDLE BOX ELEMENTS (Everything on the scoreboard)
+*** ************************************************** **/
+
 div#scoreboard-container {
     position: relative;
     display: flex;
@@ -153,17 +164,14 @@ div#scoreboard-container {
     height: 600px;
 }
 
-img#twok-logo {
-    z-index: 50;
-    margin-top: 260px;
-}
-
 img#scoreboard-bg {
     position: absolute;
     width: 900px;
     height: 600px;
     opacity: 0.7;
 }
+
+/** AVATARS **/
 
 div#avatars-row {
     position: absolute;
@@ -178,11 +186,12 @@ img.avatar {
     height: 250px;
 }
 
-
 img.cinco {
     width: 370px;
     height: 370px;
 }
+
+/** ROW: HOME GUEST **/
 
 
 div#home-guest-row {
@@ -210,6 +219,8 @@ p#guest-text {
     margin-top: 20px;
     margin-right: 95px;
 }
+
+/** ROW: TOTAL WINS **/
 
 div#scorebox-squares-row {
     position: absolute;
@@ -240,6 +251,8 @@ div.scorebox-square {
     height: 200px;
     background-color: black;
 }
+
+/** ROW: TOTAL POINTS **/
 
 div#total-pts-row {
     position: absolute;
@@ -290,6 +303,8 @@ div.total-pts-square p {
     text-align: center;
 }
 
+/** ROW: TOTAL BLOWOUTS **/
+
 div#blowouts-row {
     position: absolute;
     display: flex;
@@ -338,6 +353,8 @@ div.blowouts-square p {
     text-align: center;
 }
 
+/** SCROLLING MARQUEE **/
+
 marquee {
     position: absolute;
     left: 150px;
@@ -352,7 +369,12 @@ marquee {
     color: red;
 }
 
-/* BOTTOM SECTION ELEMENTS */
+/** ******************* ***
+    BOTTOM BOX ELEMENTS
+*** ******************* **/
+
+/** ADD GAME BUTTON **/
+
 button#add-game-btn {
     border-radius: 10px;
     border-color: #d9b100;
@@ -367,11 +389,11 @@ button#add-game-btn {
     height: 100px;
 }
 
-/* button#add-game-btn:hover {
-    color: red;
-} */
+/** ************** ***
+    CSS ANIMATIONS
+*** ************** **/
 
-//* Bob */
+/* Bob */
 @-webkit-keyframes hvr-bob {
     0% {
         -webkit-transform: translateY(-8px);
@@ -428,9 +450,8 @@ button#add-game-btn {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.hvr-bob:hover,
-.hvr-bob:focus,
-.hvr-bob:active {
+
+.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
     -webkit-animation-name: hvr-bob-float, hvr-bob;
     animation-name: hvr-bob-float, hvr-bob;
     -webkit-animation-duration: .3s, 1.5s;
@@ -458,14 +479,13 @@ button#add-game-btn {
     transition-duration: 0.5s;
 }
 
-.hvr-bounce-in:hover,
-.hvr-bounce-in:focus,
-.hvr-bounce-in:active {
+.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
+
 
 /* Bounce Out */
 .hvr-bounce-out {
@@ -478,241 +498,51 @@ button#add-game-btn {
     transition-duration: 0.5s;
 }
 
-.hvr-bounce-out:hover,
-.hvr-bounce-out:focus,
-.hvr-bounce-out:active {
+.hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
-
-/* iPhone XR NEEDS TO BE MODIFIED AFTER ADDING THE NEW SECTIONS ABOVE */
-@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-
-    body {
-        max-height: 100%;
-        background-image: url("../img/desktop-bg-min.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: #000;
-    }
-
-    /* Site layout is three rows within a container that spans the body */
-    div#flexbox-container {
-        flex-direction: column;
-        justify-content: center;
-        display: flex;
-    }
-
-    div.box {
-        flex-direction: row;
-        justify-content: center;
-        display: flex;
-    }
-
-    div.top {
-        align-items: flex-end;
-        min-height: 200px;
-    }
-
-    div.middle {
-        min-height: 200px;
-    }
-
-    div.bottom {
-        margin-top: 20px;
-    }
-
-    /* TOP SECTION ELEMENTS */
-    div#arena-bg {
-        position: relative;
-        border-right: 25px solid transparent;
-        border-bottom: 50px solid #144D91;
-        border-left: 25px solid transparent;
-    }
-
-    div#arena-bg h1 {
-        position: absolute;
-        margin-top: 2%;
-        margin-left: 15%;
-        font-size: 2em;
-        font-family: 'harabara_maisharabaramaisdemo';
-        text-shadow: 2px 2px 3px #212585;
-        letter-spacing: 4px;
-        color: #ccc;
-    }
-
-    div#versus-bg {
-        position: relative;
-        margin-bottom: -15px;
-        border-top: 75px solid rgba(0, 0, 0, 0.7);
-        border-right: 50px solid transparent;
-        border-left: 50px solid transparent;
-        width: 200px;
-    }
-
-    div#versus-bg h3 {
-        position: absolute;
-        margin-top: -37%;
-        margin-left: 27%;
-        font-size: 4em;
-        font-family: 'harabara_maisharabaramaisdemo';
-        letter-spacing: 4px;
-        color: #ccc;
-    }
-
-    #versus-text {
-        z-index: 99;
-    }
-
-    div#monroe-text-bg {
-        transform: skew(35deg);
-        margin-right: -0px;
-        width: 300px;
-        background-color: #A31826;
-    }
-
-    div#monroe-text-bg p {
-        transform: skew(-35deg);
-        margin: 0;
-        font-size: 50px;
-        font-family: 'harabara_maisharabaramaisdemo';
-        text-align: center;
-        text-shadow: 2px 2px 3px #6E1501;
-        letter-spacing: 6px;
-        color: #D9B100;
-    }
-
-    div#cinco-text-bg {
-        transform: skew(-35deg);
-        margin-left: -0px;
-        width: 300px;
-        background-color: #3248A8;
-    }
-
-    div#cinco-text-bg p {
-        transform: skew(35deg);
-        margin: 0px;
-        font-size: 50px;
-        font-family: 'harabara_maisharabaramaisdemo';
-        text-align: center;
-        text-shadow: 2px 2px 3px #212585;
-        letter-spacing: 6px;
-        color: #ccc;
-    }
-
-    /* MIDDLE SECTION ELEMENTS */
-    div#scoreboard-bg {
-        position: relative;
-        margin-top: 35px;
-        width: 700px;
-        height: 700px;
-        border-top: 500px solid rgba(0, 0, 0, 0.7);
-        border-right: 100px solid transparent;
-        border-left: 100px solid transparent;
-    }
-
-    img#monroe-avatar {
-        position: absolute;
-        margin-top: -50%;
-        margin-left: -20%;
-        width: 200px;
-        height: 200px;
-    }
-
-    img#cinco-avatar {
-        position: absolute;
-        margin-top: -50%;
-        margin-left: 90%;
-        width: 200px;
-        height: 200px;
-    }
-
-    div#home-guest-row {
-        position: absolute;
-        flex-direction: row;
-        justify-content: space-between;
-        display: flex;
-        margin-top: -70%;
-        width: 100%;
-        font-size: 3em;
-        font-family: 'harabara_maisharabaramaisdemo';
-        font-style: italic;
-        letter-spacing: 5px;
-        color: #ccc;
-    }
-
-    p#home-text {
-        margin-left: 120px;
-    }
-
-    p#guest-text {
-        margin-right: 100px;
-    }
-
-    div#scorebox-squares-row {
-        position: absolute;
-        flex-direction: row;
-        justify-content: space-evenly;
-        display: flex;
-        margin-top: -55%;
-        width: 100%;
-    }
-
-    div#scorebox-squares-row p {
-        margin: 0;
-        height: 173px;
-        padding-top: 27px;
-        padding-left: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
-        font-size: 10em;
-        font-family: 'cursed_timer_ulilregular';
-        text-shadow: 1px 1px 10px #FFD400;
-        letter-spacing: 15px;
-        color: #D9B504;
-    }
-
-    div.scorebox-square {
-        border: 7px solid #ccc;
-        width: 250px;
-        height: 200px;
-    }
-
-    marquee {
-        position: absolute;
-        overflow: hidden;
-        margin-top: -100px;
-        border-radius: 20px;
-        width: 100%;
-        padding-top: 6px;
-        background-color: rgba(0, 0, 0, 0.8);
-        font-size: 2em;
-        font-family: 'Subway Ticker Grid';
-        color: red;
-    }
-
-    /* BOTTOM SECTION ELEMENTS */
-    button#add-game {
-        border-radius: 20px;
-        border-color: #D9B100;
-        padding: 30px;
-        background: rgba(0, 0, 0, 0.8);
-        font-size: 80px;
-        font-family: 'harabara_maisharabaramaisdemo';
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        letter-spacing: 5px;
-        color: #D9B100;
-        width: 550px;
-        margin: 90px;
-        border-width: 5px;
-    }
+ /* @group Blink */
+.blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
 }
-
-
-//ANimations
-
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
 
 .name-btn {
     color: #FFF;

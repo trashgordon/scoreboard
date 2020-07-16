@@ -2,26 +2,43 @@
 <html>
 <head>
     <meta charset="utf-8">
+
     <title>Scoreboard</title>
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
+
 <body>
     <div id="flexbox-container">
-        <!-- Top section starts here -->
+
+        <!-- ***** TOP SECTION ***** -->
+
         <div class="top box">
             <div id="monroe-text-bg"><p>MONROE</p></div>
+
             <div>
-                <div id="arena-bg"><h1>2K ARENA</h1></div>
-                <div id="versus-bg"><h3 id="versus-text">VS</h3></div>
+                <div id="arena-bg">
+                    <h1>2K ARENA</h1>
+                </div>
+
+                <div id="versus-bg">
+                    <h3 id="versus-text">VS</h3>
+                </div>
             </div>
-            <div id="cinco-text-bg"><p>CINCO</p></div>
-        </div>
-        <!-- Middle section starts here -->
+
+            <div id="cinco-text-bg">
+                <p>CINCO</p>
+            </div>
+        </div> <!-- end of top box -->
+
+        <!-- ***** MIDDLE SECTION *****-->
+
         <div class="middle box">
             <div id="scoreboard-container">
-                <img id="twok-logo" src="img/2klogo.svg">
                 <img id="scoreboard-bg" src="img/trapezoid-large.png">
+
                 <div id="avatars-row">
                     <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
                     <img class="avatar" src="img/ava-cinco.png" alt="Monroe Avatar">
@@ -29,7 +46,7 @@
 
                 <div id="home-guest-row">
                     <p id="home-text">HOME</p>
-                    <p id="guest-text">GUEST</p>
+                    <p id="guest-text">GUEST</p>``
                 </div>
 
                 <div id="scorebox-squares-row">
@@ -75,18 +92,24 @@
 
                 <marquee>NO GAME STATS TO DISPLAY</marquee>
 
-            </div>
-        </div>
-        <!-- Bottom section starts here -->
+            </div> <!-- end of scoreboard-container -->
+        </div> <!-- end of middle box -->
+
+        <!-- ***** BOTTOM SECTION ***** -->
+
         <div class="bottom box">
-            <button id="add-game-btn" onclick="showForm()">ADD GAME</button>
+            <button id="add-game-btn" onclick="showLoginForm()">ADD GAME</button>
+
             <div id="add-game-form">
+
                 <form action="#" id="form" method="post" name="form">
                     <img id="close" src="img/btn-close.png" onclick ="hideForm()">
                     <h2>GAME STATS</h2>
                     <hr>
                     <div id="fields-container">
+
                         <h3 id="form-versus-text">VS</h3>
+
                         <div id="player-one-column">
                             <label for="player-one-team">TEAM</label>
                             <select id="player-one-team">
@@ -121,9 +144,11 @@
                                 <option value="uta">UTA</option>
                                 <option value="was">WAS</option>
                             </select>
+
                             <label for="player-one-score">SCORE</label>
                             <input type="number" id="player-one-score">
                         </div>
+
                         <div id="player-two-column">
                             <label for="player-two-team">TEAM</label>
                             <select id="player-two-team">
@@ -158,30 +183,39 @@
                                 <option value="uta">UTA</option>
                                 <option value="was">WAS</option>
                             </select>
+
                             <label for="player-two-score">SCORE</label>
                             <input type="number" id="player-two-score">
                         </div>
-                    </div>
+
+                    </div> <!-- end of fields-container -->
+
                     <hr>
-                    <a id="submit">SUBMIT</a>
+                    <a id="btn-submit">SUBMIT</a>
                 </form>
+
+            </div> <!-- end of add-game-form -->
+
+            <div id="auth-form-container">
+                <div id="auth-form">
+                    <input  id="txt-email" type="email" placeholder="Email" autocomplete="on">
+
+                    <input  id="txt-password" type="password" placeholder="Password" autocomplete="on">
+
+                    <button id="btn-login" onclick="login()">LOG IN</button>
+
+                    <button id="btn-sign-up" onclick="signUp()">Sign Up</button>
+
+                    <button id="btn-logout">LOG OUT</button>
+                </div>
             </div>
-        </div>
-        </div>
-    </div>
+
+        </div> <!-- end of bottom box -->
+    </div> <!-- end of flexbox-container -->
     
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
-
-    <script>
-        const firebaseConfig = {
-
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="/app.js"></script>

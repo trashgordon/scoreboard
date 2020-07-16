@@ -5,27 +5,28 @@ const dbUsers = db.ref('/users/');
 const state = [];
 
 // API call that loads data
-dbGames.on('value', function(snapshot) {
+dbGames.on('value', function (snapshot) {
     state.length = 0;
-    snapshot.forEach(function(childSnapshot) {
+    snapshot.forEach(function (childSnapshot) {
         state.push(childSnapshot.val());
         calcTotalWins();
         calcTotalPoints();
         calcBlowouts();
         updateMarquee();
     });
-});    
+});
 
-$("#add-game-btn").hover(function() {
+$("#add-game-btn").hover(function () {
     $(this).addClass("hvr-bob");
-    }, function() {
-        $(this).removeClass("hvr-bob");
+}, function () {
+    $(this).removeClass("hvr-bob");
 });
 
 // Show and hide game entry form
 function showForm() {
     $('#add-game-form').addClass('hvr-bounce-in').show();
 }
+
 function hideForm() {
     $('#add-game-form').hide();
 }
@@ -37,7 +38,7 @@ $('a#submit').on('click', () => {
 });
 
 // Writes a new game to the database
-function writeGame()  {
+function writeGame() {
     dbGames.push({
         playerOneId: 'monroeId',
         playerTwoId: 'cincoId',
@@ -45,14 +46,19 @@ function writeGame()  {
         playerTwoTeam: $('#player-two-team').val(),
         playerOneScore: $('#player-one-score').val(),
         playerTwoScore: $('#player-two-score').val(),
-})}
+    })
+}
 
 // Gets all scores from state
 function getScores() {
-    const p1Scores = state.map(function({playerOneScore}) {
+    const p1Scores = state.map(function ({
+        playerOneScore
+    }) {
         return parseInt(playerOneScore, 10);
     });
-    const p2Scores = state.map(function({playerTwoScore}) {
+    const p2Scores = state.map(function ({
+        playerTwoScore
+    }) {
         return parseInt(playerTwoScore, 10);
     });
 
@@ -82,15 +88,15 @@ function calcTotalPoints() {
     const p1Scores = scores[0];
     const p2Scores = scores[1];
 
-    const p1TotalPoints = p1Scores.reduce(function(a, b) {
+    const p1TotalPoints = p1Scores.reduce(function (a, b) {
         return a + b;
     }, 0);
 
-    const p2TotalPoints = p2Scores.reduce(function(a, b) {
+    const p2TotalPoints = p2Scores.reduce(function (a, b) {
         return a + b;
     }, 0);
 
-     displayTotalPoints(p1TotalPoints, p2TotalPoints);
+    displayTotalPoints(p1TotalPoints, p2TotalPoints);
 }
 
 // Calculates number of blowouts for each user
@@ -120,7 +126,7 @@ function calcBlowouts() {
 function displayWins(p1TotalWins, p2TotalWins) {
     const p1TotalWinsStr = ('00' + p1TotalWins.toString()).slice(-2);
     const p2TotalWinsStr = ('00' + p2TotalWins.toString()).slice(-2);
-    
+
     $("#home-wins").text(p1TotalWinsStr);
     $("#guest-wins").text(p2TotalWinsStr);
 }
@@ -138,16 +144,30 @@ function displayBlowouts(p1Blowouts, p2Blowouts) {
 
 // Displays teams & scores of latest game on scrolling marquee
 function updateMarquee() {
-    dbGames.limitToLast(1).on('value', function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
+    dbGames.limitToLast(1).on('value', function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
             const game = childSnapshot.val();
 
             $('marquee').text(`
             ${game.playerOneTeam.toUpperCase()} VS ${game.playerTwoTeam.toUpperCase()}
             : ${game.playerOneScore} - ${game.playerTwoScore}
             `);
-    });
-})}
+        });
+    })
+}
+
+
+
+// Function Below is to show and hide the stats button on names
+function show_hide() {
+    var click = document.getElementById("drop-content");
+    if (click.style.display === "none") {
+        click.style.display = "block";
+    } else {
+        click.style.display = "none";
+    }
+}
+
 
 // Determines the winner of a game and returns winner ID
 // function getWinnerId(game) {

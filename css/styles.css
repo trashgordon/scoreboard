@@ -156,6 +156,9 @@ div#scoreboard-container {
 img#twok-logo {
     z-index: 50;
     margin-top: 260px;
+    width: 90px;
+    height: 90px;
+
 }
 
 img#scoreboard-bg {
@@ -371,7 +374,7 @@ button#add-game-btn {
     color: red;
 } */
 
-//* Bob */
+/* Bob */
 @-webkit-keyframes hvr-bob {
     0% {
         -webkit-transform: translateY(-8px);
@@ -485,6 +488,51 @@ button#add-game-btn {
     transform: scale(0.8);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+/* Dropdownmenu */
+.dropdown {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+
+}
+
+.stats {
+    position: relative;
+
+}
+
+.stats ul {
+    position: relative;
+    left: -500px;
+    background: white;
+    margin-top: 10px;
+    width: 150px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 5px;
+    z-index: 1;
+    bottom: -100px;
+}
+
+.stats a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    color: white;
 }
 
 
@@ -711,8 +759,8 @@ button#add-game-btn {
 }
 
 
-//ANimations
 
+/* Animations */
 
 .name-btn {
     color: #FFF;

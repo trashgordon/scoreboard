@@ -1,3 +1,7 @@
+/** ************** ***
+    EMBEDDED FONTS
+*** ************** **/
+
 @font-face {
     font-family: 'cursed_timer_ulilregular';
     src: url('../fonts/cursedtimerulil-aznm-webfont.woff2') format('woff2'),
@@ -23,6 +27,10 @@
     font-display: swap;
 }
 
+/** ************************* ***
+    MAIN CONTAINERS AND BOXES
+*** ************************* **/
+
 body {
     max-height: 100%;
     background-image: url("../img/desktop-bg-resized.jpg");
@@ -31,7 +39,6 @@ body {
     background-color: #000;
 }
 
-/* Site layout is three rows within a container that spans the body */
 div#flexbox-container {
     flex-direction: column;
     justify-content: center;
@@ -57,7 +64,12 @@ div.bottom {
     margin-top: 20px;
 }
 
-/* TOP SECTION ELEMENTS */
+/** **************** ***
+    TOP BOX ELEMENTS
+*** **************** **/
+
+/** ARENA SECTION **/
+
 div#arena-bg {
     position: relative;
     border-right: 25px solid transparent;
@@ -76,13 +88,7 @@ div#arena-bg h1 {
     color: #ccc;
 }
 
-img.twoklogo {
-
-    position: relative;
-    width: 150px;
-    height: 150px;
-    margin-left: 83px;
-}
+/** VERSUS SECTION **/
 
 div#versus-bg {
     position: relative;
@@ -106,6 +112,8 @@ div#versus-bg h3 {
 #versus-text {
     z-index: 99;
 }
+
+/** PLAYER NAMES **/
 
 div#monroe-text-bg {
     transform: skew(35deg);
@@ -143,7 +151,10 @@ div#cinco-text-bg p {
     color: #ccc;
 }
 
-/* MIDDLE SECTION ELEMENTS */
+/** ************************************************** ***
+    MIDDLE BOX ELEMENTS (Everything on the scoreboard)
+*** ************************************************** **/
+
 div#scoreboard-container {
     position: relative;
     display: flex;
@@ -153,20 +164,14 @@ div#scoreboard-container {
     height: 600px;
 }
 
-img#twok-logo {
-    z-index: 50;
-    margin-top: 260px;
-    width: 90px;
-    height: 90px;
-
-}
-
 img#scoreboard-bg {
     position: absolute;
     width: 900px;
     height: 600px;
     opacity: 0.7;
 }
+
+/** AVATARS **/
 
 div#avatars-row {
     position: absolute;
@@ -181,12 +186,7 @@ img.avatar {
     height: 250px;
 }
 
-
-img.cinco {
-    width: 370px;
-    height: 370px;
-}
-
+/** ROW: HOME GUEST **/
 
 div#home-guest-row {
     position: absolute;
@@ -213,6 +213,8 @@ p#guest-text {
     margin-top: 20px;
     margin-right: 95px;
 }
+
+/** ROW: TOTAL WINS **/
 
 div#scorebox-squares-row {
     position: absolute;
@@ -243,6 +245,8 @@ div.scorebox-square {
     height: 200px;
     background-color: black;
 }
+
+/** ROW: TOTAL POINTS **/
 
 div#total-pts-row {
     position: absolute;
@@ -293,6 +297,8 @@ div.total-pts-square p {
     text-align: center;
 }
 
+/** ROW: TOTAL BLOWOUTS **/
+
 div#blowouts-row {
     position: absolute;
     display: flex;
@@ -341,6 +347,8 @@ div.blowouts-square p {
     text-align: center;
 }
 
+/** SCROLLING MARQUEE **/
+
 marquee {
     position: absolute;
     left: 150px;
@@ -355,7 +363,12 @@ marquee {
     color: red;
 }
 
-/* BOTTOM SECTION ELEMENTS */
+/** ******************* ***
+    BOTTOM BOX ELEMENTS
+*** ******************* **/
+
+/** ADD GAME BUTTON **/
+
 button#add-game-btn {
     border-radius: 10px;
     border-color: #d9b100;
@@ -370,9 +383,9 @@ button#add-game-btn {
     height: 100px;
 }
 
-/* button#add-game-btn:hover {
-    color: red;
-} */
+/** ************** ***
+    CSS ANIMATIONS
+*** ************** **/
 
 /* Bob */
 @-webkit-keyframes hvr-bob {
@@ -490,49 +503,103 @@ button#add-game-btn {
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
-/* Dropdownmenu */
-.dropdown {
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-
+/* @group Blink */
+.blink {
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
 }
 
-.stats {
-    position: relative;
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
 
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
-.stats ul {
-    position: relative;
-    left: -500px;
-    background: white;
-    margin-top: 10px;
-    width: 150px;
-    height: 250px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    list-style: none;
-    border-radius: 5px;
-    z-index: 1;
-    bottom: -100px;
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
-.stats a {
-    color: black;
-    text-decoration: none;
+@-ms-keyframes blink {
+    0% {
+        opacity: 1;
+    }
 
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
-.dropdown button {
-    background: none;
-    border: none;
-    color: white;
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -758,8 +825,7 @@ button#add-game-btn {
     }
 }
 
-
-
+<<<<<<< HEAD
 /* Animations */
 
 .name-btn {
@@ -803,3 +869,8 @@ button#add-game-btn {
     opacity: 1;
     transform: scale(1, 1);
 }
+
+=======
+/* ANIMATIONS */
+
+>>>>>>>3ce93f43348572a9a37b25c2d4734683fdc42fc4

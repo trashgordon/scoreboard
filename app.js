@@ -1,10 +1,27 @@
-// Database & State
+// ************************* //
+// CONFIGURATION AND GLOBALS //
+// ************************* //
+
+(function () {
+    const firebaseConfig = {
+
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+})()
+
+// Database & State variables
+const auth = firebase.auth();
 const db = firebase.database();
 const dbGames = db.ref('/games/');
 const dbUsers = db.ref('/users/');
 const state = [];
 
-// API call that loads data
+// ********************************* //
+// FUNCTIONS FOR DATABASE READ/WRITE //
+// ********************************* //
+
+// Retrieves data of previous games from database
 dbGames.on('value', function (snapshot) {
     state.length = 0;
     snapshot.forEach(function (childSnapshot) {
@@ -16,23 +33,8 @@ dbGames.on('value', function (snapshot) {
     });
 });
 
-$("#add-game-btn").hover(function () {
-    $(this).addClass("hvr-bob");
-}, function () {
-    $(this).removeClass("hvr-bob");
-});
-
-// Show and hide game entry form
-function showForm() {
-    $('#add-game-form').addClass('hvr-bounce-in').show();
-}
-
-function hideForm() {
-    $('#add-game-form').hide();
-}
-
-// Submit game entry form
-$('a#submit').on('click', () => {
+// Submit button calls a write to the database
+$('a#btn-submit').on('click', () => {
     writeGame();
     hideForm();
 });
@@ -48,6 +50,58 @@ function writeGame() {
         playerTwoScore: $('#player-two-score').val(),
     })
 }
+
+// **************************** //
+// FUNCTIONS FOR AUTHENTICATION //
+// **************************** //
+
+// Add login event
+function login() {
+    const email = document.getElementById('txt-email').value;
+    const pass = document.getElementById('txt-password').value;
+
+    // Sign in
+    auth.signInUserWithEmailAndPassword(email,
+        pass).then(function (user) {
+        var user = firebase.auth().currentUser;
+        console.log(user); // Optional
+    }, function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+    });
+}
+
+// Add signup event
+function signUp() {
+    const email = document.getElementById('txt-email').value;
+    const pass = document.getElementById('txt-password').value;
+
+    // Sign up
+    auth.createUserWithEmailAndPassword(email,
+        pass).then(function (user) {
+        var user = firebase.auth().currentUser;
+        console.log(user); // Optional
+    }, function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+    });
+}
+
+// Add a realtime listener
+auth.onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+        showAddGameForm();
+    } else {
+        console.log('not logged in');
+    }
+});
+
+// ***************************** //
+// FUNCTIONS THAT CALCULATE DATA //
+// ***************************** //
 
 // Gets all scores from state
 function getScores() {
@@ -122,6 +176,11 @@ function calcBlowouts() {
     displayBlowouts(p1Blowouts, p2Blowouts);
 }
 
+// *********************************** //
+// FUNCTIONS THAT DISPLAY DATA ON SITE //
+// *********************************** //
+
+
 // Displays total wins for each player on scoreboard
 function displayWins(p1TotalWins, p2TotalWins) {
     const p1TotalWinsStr = ('00' + p1TotalWins.toString()).slice(-2);
@@ -137,6 +196,7 @@ function displayTotalPoints(p1TotalPoints, p2TotalPoints) {
     $("#p2-tot-pts").text(p2TotalPoints);
 }
 
+// Displays total number of blowouts for each player on scoreboard
 function displayBlowouts(p1Blowouts, p2Blowouts) {
     $("#p1-blowouts").text(p1Blowouts);
     $("#p2-blowouts").text(p2Blowouts);
@@ -167,6 +227,43 @@ function show_hide() {
         click.style.display = "none";
     }
 }
+
+
+// ************************************ //
+// FUNCTIONS THAT ADD ANIMATION TO SITE //
+// ************************************ //
+
+// Show and hide game entry form
+function showAddGameForm() {
+    $('#add-game-form').addClass('hvr-bounce-in').show();
+}
+
+function hideForm() {
+    $('#add-game-form').hide();
+}
+
+function showLoginForm() {
+    $('#auth-form-container').show();
+}
+
+function hideLoginForm() {
+    $('#auth-form-container').hide();
+}
+
+// Hover animation for the Add Game button
+$("#add-game-btn").hover(function () {
+    $(this).addClass("hvr-bob");
+}, function () {
+    $(this).removeClass("hvr-bob");
+});
+
+
+
+
+
+
+
+
 
 
 // Determines the winner of a game and returns winner ID

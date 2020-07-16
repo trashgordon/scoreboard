@@ -37,208 +37,191 @@
                 <p>CINCO</p>
             </div>
         </div>
+    </div> <!-- end of top box -->
 
-        <!-- Middle section starts here -->
-            <div id="monroe-text-bg"><p>MONROE</p></div>
+    <!-- ***** MIDDLE SECTION *****-->
 
-            <div>
-                <div id="arena-bg">
-                    <h1>2K ARENA</h1>
+    <div class="middle box">
+        <div id="scoreboard-container">
+            <img id="scoreboard-bg" src="img/trapezoid-large.png">
+
+            <div id="avatars-row">
+                <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
+                <img class="cinco avatar" src="img/avi-5.png" alt="cinco Avatar">
+            </div>
+
+            <div id="home-guest-row">
+                <p id="home-text">HOME</p>
+                <p id="guest-text">GUEST</p>``
+            </div>
+
+            <div id="scorebox-squares-row">
+                <div class="scorebox-square">
+                    <p id="home-wins">00</p>
                 </div>
-
-                <div id="versus-bg">
-                    <h3 id="versus-text">VS</h3>
+                <div class="scorebox-square">
+                    <p id="guest-wins">00</p>
                 </div>
             </div>
 
-            <div id="cinco-text-bg">
-                <p>CINCO</p>
+            <div id="total-pts-row">
+                <div class="total-pts-col">
+                    <p class="total-pts-text">TOTAL PTS</p>
+                    <div class="total-pts-square">
+                        <p id="p1-tot-pts">0</p>
+                    </div>
+                </div>
+
+                <div class="total-pts-col">
+                    <p class="total-pts-text">TOTAL PTS</p>
+                    <div class="total-pts-square">
+                        <p id="p2-tot-pts">0</p>
+                    </div>
+                </div>
             </div>
-        </div> <!-- end of top box -->
 
-        <!-- ***** MIDDLE SECTION *****-->
-
-        <div class="middle box">
-            <div id="scoreboard-container">
-                <img id="scoreboard-bg" src="img/trapezoid-large.png">
-
-                <div id="avatars-row">
-                    <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
-                    <img class="cinco avatar" src="img/avi-5.png" alt="cinco Avatar">
-                </div>
-
-                <div id="home-guest-row">
-                    <p id="home-text">HOME</p>
-                    <p id="guest-text">GUEST</p>``
-                </div>
-
-                <div id="scorebox-squares-row">
-                    <div class="scorebox-square">
-                        <p id="home-wins">00</p>
-                    </div>
-                    <div class="scorebox-square">
-                        <p id="guest-wins">00</p>
+            <div id="blowouts-row">
+                <div class="blowouts-col">
+                    <p class="blowouts-text">BLOWOUTS</p>
+                    <div class="blowouts-square">
+                        <p id="p1-blowouts">0</p>
                     </div>
                 </div>
 
-                <div id="total-pts-row">
-                    <div class="total-pts-col">
-                        <p class="total-pts-text">TOTAL PTS</p>
-                        <div class="total-pts-square">
-                            <p id="p1-tot-pts">0</p>
-                        </div>
-                    </div>
-
-                    <div class="total-pts-col">
-                        <p class="total-pts-text">TOTAL PTS</p>
-                        <div class="total-pts-square">
-                            <p id="p2-tot-pts">0</p>
-                        </div>
+                <div class="blowouts-col">
+                    <p class="blowouts-text">BLOWOUTS</p>
+                    <div class="blowouts-square">
+                        <p id="p2-blowouts">0</p>
                     </div>
                 </div>
+            </div>
 
-                <div id="blowouts-row">
-                    <div class="blowouts-col">
-                        <p class="blowouts-text">BLOWOUTS</p>
-                        <div class="blowouts-square">
-                            <p id="p1-blowouts">0</p>
-                        </div>
+            <marquee>NO GAME STATS TO DISPLAY</marquee>
+
+        </div> <!-- end of scoreboard-container -->
+    </div> <!-- end of middle box -->
+
+    <!-- ***** BOTTOM SECTION ***** -->
+
+    <div class="bottom box">
+        <button id="add-game-btn" onclick="showLoginForm()">ADD GAME</button>
+
+        <div id="add-game-form">
+
+            <form action="#" id="form" method="post" name="form">
+                <img id="close" src="img/btn-close.png" onclick="hideForm()">
+                <h2>GAME STATS</h2>
+                <hr>
+                <div id="fields-container">
+
+                    <h3 id="form-versus-text">VS</h3>
+
+                    <div id="player-one-column">
+                        <label for="player-one-team">TEAM</label>
+                        <select id="player-one-team">
+                            <option value="atl">ATL</option>
+                            <option value="bkn">BKN</option>
+                            <option value="bos">BOS</option>
+                            <option value="cha">CHA</option>
+                            <option value="chi">CHI</option>
+                            <option value="cle">CLE</option>
+                            <option value="dal">DAL</option>
+                            <option value="den">DEN</option>
+                            <option value="det">DET</option>
+                            <option value="gsw">GSW</option>
+                            <option value="hou">HOU</option>
+                            <option value="ind">IND</option>
+                            <option value="lac">LAC</option>
+                            <option value="lal">LAL</option>
+                            <option value="mem">MEM</option>
+                            <option value="mia">MIA</option>
+                            <option value="mil">MIL</option>
+                            <option value="min">MIN</option>
+                            <option value="nop">NOP</option>
+                            <option value="nyk">NYK</option>
+                            <option value="okc">OKC</option>
+                            <option value="orl">ORL</option>
+                            <option value="phi">PHI</option>
+                            <option value="phx">PHX</option>
+                            <option value="por">POR</option>
+                            <option value="sac">SAC</option>
+                            <option value="sas">SAS</option>
+                            <option value="tor">TOR</option>
+                            <option value="uta">UTA</option>
+                            <option value="was">WAS</option>
+                        </select>
+
+                        <label for="player-one-score">SCORE</label>
+                        <input type="number" id="player-one-score">
                     </div>
 
-                    <div class="blowouts-col">
-                        <p class="blowouts-text">BLOWOUTS</p>
-                        <div class="blowouts-square">
-                            <p id="p2-blowouts">0</p>
-                        </div>
+                    <div id="player-two-column">
+                        <label for="player-two-team">TEAM</label>
+                        <select id="player-two-team">
+                            <option value="atl">ATL</option>
+                            <option value="bkn">BKN</option>
+                            <option value="bos">BOS</option>
+                            <option value="cha">CHA</option>
+                            <option value="chi">CHI</option>
+                            <option value="cle">CLE</option>
+                            <option value="dal">DAL</option>
+                            <option value="den">DEN</option>
+                            <option value="det">DET</option>
+                            <option value="gsw">GSW</option>
+                            <option value="hou">HOU</option>
+                            <option value="ind">IND</option>
+                            <option value="lac">LAC</option>
+                            <option value="lal">LAL</option>
+                            <option value="mem">MEM</option>
+                            <option value="mia">MIA</option>
+                            <option value="mil">MIL</option>
+                            <option value="min">MIN</option>
+                            <option value="nop">NOP</option>
+                            <option value="nyk">NYK</option>
+                            <option value="okc">OKC</option>
+                            <option value="orl">ORL</option>
+                            <option value="phi">PHI</option>
+                            <option value="phx">PHX</option>
+                            <option value="por">POR</option>
+                            <option value="sac">SAC</option>
+                            <option value="sas">SAS</option>
+                            <option value="tor">TOR</option>
+                            <option value="uta">UTA</option>
+                            <option value="was">WAS</option>
+                        </select>
+
+                        <label for="player-two-score">SCORE</label>
+                        <input type="number" id="player-two-score">
                     </div>
-                </div>
 
-                <marquee>NO GAME STATS TO DISPLAY</marquee>
+                </div> <!-- end of fields-container -->
 
-            </div> <!-- end of scoreboard-container -->
-        </div> <!-- end of middle box -->
+                <hr>
+                <a id="btn-submit">SUBMIT</a>
+            </form>
 
-        <!-- ***** BOTTOM SECTION ***** -->
+        </div> <!-- end of add-game-form -->
 
-        <div class="bottom box">
-            <button id="add-game-btn" onclick="showLoginForm()">ADD GAME</button>
+        <div id="auth-form-container">
+            <div id="auth-form">
+                <input id="txt-email" type="email" placeholder="Email" autocomplete="on">
 
-            <div id="add-game-form">
+                <input id="txt-password" type="password" placeholder="Password" autocomplete="on">
 
-                <form action="#" id="form" method="post" name="form">
-                    <img id="close" src="img/btn-close.png" onclick="hideForm()">
-                    <h2>GAME STATS</h2>
-                    <hr>
-                    <div id="fields-container">
+                <button id="btn-login" onclick="login()">LOG IN</button>
 
-                        <h3 id="form-versus-text">VS</h3>
+                <button id="btn-sign-up" onclick="signUp()">Sign Up</button>
 
-                        <div id="player-one-column">
-                            <label for="player-one-team">TEAM</label>
-                            <select id="player-one-team">
-                                <option value="atl">ATL</option>
-                                <option value="bkn">BKN</option>
-                                <option value="bos">BOS</option>
-                                <option value="cha">CHA</option>
-                                <option value="chi">CHI</option>
-                                <option value="cle">CLE</option>
-                                <option value="dal">DAL</option>
-                                <option value="den">DEN</option>
-                                <option value="det">DET</option>
-                                <option value="gsw">GSW</option>
-                                <option value="hou">HOU</option>
-                                <option value="ind">IND</option>
-                                <option value="lac">LAC</option>
-                                <option value="lal">LAL</option>
-                                <option value="mem">MEM</option>
-                                <option value="mia">MIA</option>
-                                <option value="mil">MIL</option>
-                                <option value="min">MIN</option>
-                                <option value="nop">NOP</option>
-                                <option value="nyk">NYK</option>
-                                <option value="okc">OKC</option>
-                                <option value="orl">ORL</option>
-                                <option value="phi">PHI</option>
-                                <option value="phx">PHX</option>
-                                <option value="por">POR</option>
-                                <option value="sac">SAC</option>
-                                <option value="sas">SAS</option>
-                                <option value="tor">TOR</option>
-                                <option value="uta">UTA</option>
-                                <option value="was">WAS</option>
-                            </select>
-
-                            <label for="player-one-score">SCORE</label>
-                            <input type="number" id="player-one-score">
-                        </div>
-
-                        <div id="player-two-column">
-                            <label for="player-two-team">TEAM</label>
-                            <select id="player-two-team">
-                                <option value="atl">ATL</option>
-                                <option value="bkn">BKN</option>
-                                <option value="bos">BOS</option>
-                                <option value="cha">CHA</option>
-                                <option value="chi">CHI</option>
-                                <option value="cle">CLE</option>
-                                <option value="dal">DAL</option>
-                                <option value="den">DEN</option>
-                                <option value="det">DET</option>
-                                <option value="gsw">GSW</option>
-                                <option value="hou">HOU</option>
-                                <option value="ind">IND</option>
-                                <option value="lac">LAC</option>
-                                <option value="lal">LAL</option>
-                                <option value="mem">MEM</option>
-                                <option value="mia">MIA</option>
-                                <option value="mil">MIL</option>
-                                <option value="min">MIN</option>
-                                <option value="nop">NOP</option>
-                                <option value="nyk">NYK</option>
-                                <option value="okc">OKC</option>
-                                <option value="orl">ORL</option>
-                                <option value="phi">PHI</option>
-                                <option value="phx">PHX</option>
-                                <option value="por">POR</option>
-                                <option value="sac">SAC</option>
-                                <option value="sas">SAS</option>
-                                <option value="tor">TOR</option>
-                                <option value="uta">UTA</option>
-                                <option value="was">WAS</option>
-                            </select>
-
-                            <label for="player-two-score">SCORE</label>
-                            <input type="number" id="player-two-score">
-                        </div>
-
-                    </div> <!-- end of fields-container -->
-
-                    <hr>
-                    <a id="btn-submit">SUBMIT</a>
-                </form>
-
-            </div> <!-- end of add-game-form -->
-
-            <div id="auth-form-container">
-                <div id="auth-form">
-                    <input  id="txt-email" type="email" placeholder="Email" autocomplete="on">
-
-                    <input  id="txt-password" type="password" placeholder="Password" autocomplete="on">
-
-                    <button id="btn-login" onclick="login()">LOG IN</button>
-
-                    <button id="btn-sign-up" onclick="signUp()">Sign Up</button>
-
-                    <button id="btn-logout">LOG OUT</button>
-                </div>
+                <button id="btn-logout">LOG OUT</button>
             </div>
         </div>
     </div>
     </div>
+    </div>
 
-        </div> <!-- end of bottom box -->
+    </div> <!-- end of bottom box -->
     </div> <!-- end of flexbox-container -->
-    
+
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>

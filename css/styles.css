@@ -79,13 +79,14 @@ div#arena-bg {
 
 div#arena-bg h1 {
     position: absolute;
-    margin-top: 2%;
-    margin-left: 15%;
-    font-size: 2em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    margin-top: 13px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Archivo Black', sans-serif;
     text-shadow: 2px 2px 3px #212585;
     letter-spacing: 4px;
     color: #ccc;
+    text-align: center;
 }
 
 /** VERSUS SECTION **/
@@ -104,7 +105,7 @@ div#versus-bg h3 {
     margin-top: -37%;
     margin-left: 27%;
     font-size: 4em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Archivo Black', sans-serif;
     letter-spacing: 4px;
     color: #ccc;
 }
@@ -126,7 +127,7 @@ div#monroe-text-bg p {
     transform: skew(-35deg);
     margin: 0;
     font-size: 2em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Archivo Black', sans-serif;
     text-align: center;
     text-shadow: 2px 2px 3px #6e1501;
     letter-spacing: 6px;
@@ -144,7 +145,7 @@ div#cinco-text-bg p {
     transform: skew(35deg);
     margin: 0;
     font-size: 2em;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Archivo Black', sans-serif;
     text-align: center;
     text-shadow: 2px 2px 3px #212585;
     letter-spacing: 6px;
@@ -187,8 +188,13 @@ img.avatar {
 }
 
 img.cinco {
-    width: 370px;
-    height: 370px;
+    width: 375px;
+    height: 375px;
+    position: absolute;
+    display: block;
+    bottom: -80px;
+    left: 815px;
+    z-index: 1;
 }
 
 /** ROW: HOME GUEST **/
@@ -211,6 +217,7 @@ p#home-text {
     margin: 0;
     margin-top: 20px;
     margin-left: 120px;
+    margin-right: 20px;
     padding-left: 5px;
 }
 
@@ -218,6 +225,7 @@ p#guest-text {
     margin: 0;
     margin-top: 20px;
     margin-right: 95px;
+    margin-left: 170px;
 }
 
 /** ROW: TOTAL WINS **/
@@ -381,12 +389,25 @@ button#add-game-btn {
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     font-size: 30px;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Archivo Black', sans-serif;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
     width: 250px;
     height: 100px;
+}
+
+
+
+/** ************** ***
+   Audio PLayer Styling
+*** ************** **/
+
+audio {
+    width: 600px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 90px;
+    transform: scale(1.05);
 }
 
 /** ************** ***
@@ -451,7 +472,9 @@ button#add-game-btn {
 }
 
 
-.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+.hvr-bob:hover,
+.hvr-bob:focus,
+.hvr-bob:active {
     -webkit-animation-name: hvr-bob-float, hvr-bob;
     animation-name: hvr-bob-float, hvr-bob;
     -webkit-animation-duration: .3s, 1.5s;
@@ -479,7 +502,9 @@ button#add-game-btn {
     transition-duration: 0.5s;
 }
 
-.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
@@ -498,50 +523,112 @@ button#add-game-btn {
     transition-duration: 0.5s;
 }
 
-.hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {
+.hvr-bounce-out:hover,
+.hvr-bounce-out:focus,
+.hvr-bounce-out:active {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
- /* @group Blink */
+/* @group Blink */
 .blink {
-	-webkit-animation: blink .75s linear infinite;
-	-moz-animation: blink .75s linear infinite;
-	-ms-animation: blink .75s linear infinite;
-	-o-animation: blink .75s linear infinite;
-	 animation: blink .75s linear infinite;
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
 }
+
 @-webkit-keyframes blink {
-	0% { opacity: 1; }
-	50% { opacity: 1; }
-	50.01% { opacity: 0; }
-	100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @-moz-keyframes blink {
-	0% { opacity: 1; }
-	50% { opacity: 1; }
-	50.01% { opacity: 0; }
-	100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @-ms-keyframes blink {
-	0% { opacity: 1; }
-	50% { opacity: 1; }
-	50.01% { opacity: 0; }
-	100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @-o-keyframes blink {
-	0% { opacity: 1; }
-	50% { opacity: 1; }
-	50.01% { opacity: 0; }
-	100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 @keyframes blink {
-	0% { opacity: 1; }
-	50% { opacity: 1; }
-	50.01% { opacity: 0; }
-	100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    50.01% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .name-btn {

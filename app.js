@@ -50,20 +50,38 @@ function writeGame()  {
         playerTwoScore: $('#player-two-score').val(),
 })}
 
+// Writes a new user to the database
+function writeUser(firstName, lastName, email)  {
+    dbUsers.push({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+})}
+
 // **************************** //
 // FUNCTIONS FOR AUTHENTICATION //
 // **************************** //
 
+// Clicking Add Game button checks if a user is logged in
+$('#add-game-btn').on('click', () => {
+    const user = auth.currentUser;
+    if (user) {
+        showAddGameForm();
+    } else {
+        showLoginForm();ß
+    }
+})
+
 // Add login event
 function login() {
-    const email = document.getElementById('txt-email').value;
-    const pass = document.getElementById('txt-password').value;
+    const email = $('#login-email').val();
+    const pass = $('#login-pw').val();
 
     // Sign in
-    auth.signInUserWithEmailAndPassword(email, 
+    auth.signInWithEmailAndPassword(email, 
         pass).then(function(user) {
            var user = firebase.auth().currentUser;
-           console.log(user); // Optional
+           hideLoginForm();
         }, function(error) {
            // Handle Errors here.
            var errorCode = error.code;
@@ -73,14 +91,17 @@ function login() {
 
 // Add signup event
 function signUp() {
-    const email = document.getElementById('txt-email').value;
-    const pass = document.getElementById('txt-password').value;
+    const firstName = $('#signUp-firstName').val();
+    const lastName = $('#signUp-lastName').val();
+    const email = $('#signUp-email').val();
+    const pass = $('#signUp-pw').val();
 
     // Sign up
     auth.createUserWithEmailAndPassword(email, 
         pass).then(function(user) {
            var user = firebase.auth().currentUser;
-           console.log(user); // Optional
+           writeUser(firstName, lastName, email);
+           hideLoginForm();
         }, function(error) {
            // Handle Errors here.
            var errorCode = error.code;
@@ -222,11 +243,12 @@ function hideForm() {
     $('#add-game-form').hide();
 }
 
+// Show and hide login form
 function showLoginForm() {
-    $('#auth-form-container').show();
+    $('#loginForm').show();
 }
 function hideLoginForm() {
-    $('#auth-form-container').hide();
+    $('#loginForm').hide();
 }
 
 // Hover animation for the Add Game button
@@ -236,6 +258,50 @@ $("#add-game-btn").hover(function() {
         $(this).removeClass("hvr-bob");
 });
 
+// Animations for login form
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+    var $this = $(this),
+        label = $this.prev('label');
+  
+        if (e.type === 'keyup') {
+              if ($this.val() === '') {
+            label.removeClass('active highlight');
+          } else {
+            label.addClass('active highlight');
+          }
+      } else if (e.type === 'blur') {
+          if( $this.val() === '' ) {
+              label.removeClass('active highlight'); 
+              } else {
+              label.removeClass('highlight');   
+              }   
+      } else if (e.type === 'focus') {
+        
+        if( $this.val() === '' ) {
+              label.removeClass('highlight'); 
+              } 
+        else if( $this.val() !== '' ) {
+              label.addClass('highlight');
+              }
+      }
+  
+  });
+  
+  $('.tab a').on('click', function (e) {
+    
+    e.preventDefault();
+    
+    $(this).parent().addClass('active');
+    $(this).parent().siblings().removeClass('active');
+    
+    target = $(this).attr('href');
+  
+    $('.tab-content > div').not(target).hide();
+    
+    $(target).fadeIn(600);
+    
+  });
 
 
 

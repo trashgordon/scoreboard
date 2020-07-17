@@ -27,7 +27,7 @@ div#add-game-form {
     font-family: 'harabara_maisharabaramaisdemo';
 }
 
-form {
+div#add-game-form form {
     flex-direction: column;
     display: flex;
     border: 5px solid white;
@@ -40,7 +40,7 @@ form {
     color: #d9b100;
 }
 
-h2 {
+div#add-game-form h2 {
     margin: -10px -50px;
     border-radius: 10px 10px 0 0;
     padding: 20px 35px;
@@ -64,7 +64,7 @@ hr {
     border-top:1px solid #444;
 }
 
-input, select {
+div#add-game-form input, select {
     margin-top: 10px;
     margin-bottom: 40px;
     box-sizing: border-box;
@@ -110,74 +110,204 @@ a#submit {
 *** LOGIN FORM ***
 *** ********** **/
 
-div#auth-form-container {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    display: none;
-    margin-left: -280px;
-}
-
-div#auth-form {
-    flex-direction: column;
-    display: flex;
-    border: 5px solid white;
-    border-radius: 10px;
-    max-width: 450px;
-    min-width: 450px;
-    padding:10px 50px;
-    background-image: linear-gradient(to bottom right, black, #222, black);
-    font-family: 'harabara_maisharabaramaisdemo';
-    color: #d9b100;
-}
-
-div#auth-form input {
-    margin-top: 10px;
-    margin-bottom: 40px;
+div.form *, *:before, *:after {
     box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    background-color: #111;
-    font-size: 1em;
+}
+
+div.form a {
+    text-decoration:none;
+    color:#144d91;
+    transition:.5s ease;
+}
+
+div.form a:hover {
+    color: #144d91;
+}
+
+.form {
+    position: absolute;
+    top: 10%;
+    background-image: linear-gradient(to bottom right, black, #222, black);
+    padding: 40px;
+    width: 33%;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    border: 1px solid #333;
+    box-shadow:0 4px 10px 4px rgba(19, 35, 47,0.3);
+}
+
+.tab-group {
+    list-style:none;
+    padding:0;
+    margin:25px 0 40px 0;
+}
+
+div.form .tab {
+    background-color: #555;
+}
+
+div#signup {
+    display: flex;
+    flex-direction: column;
+}
+
+div.form li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba(#a0b3b0,.25);
+    font-family: 'Russo One';
+    color:#ccc;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+}
+
+div.form li:hover {
+    background:#144d91;
     color: white;
 }
 
-h2 {
-    margin: -10px -50px;
-    border-radius: 10px 10px 0 0;
-    padding: 20px 35px;
-    background-color: rgba(0,0,0,0.5);
-    text-align: center;
-    letter-spacing: 4px;
+div.form .active a {
+    background:#144d91;
+    color: white;
 }
 
-hr {
-    margin:10px -50px;
-    border:0;
-    border-top:1px solid #444;
+.tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.tab-content {
+    position: relative;
 }
 
-button#btn-login {
-    margin: 10px auto;
-    border: 1px solid #444;
-    border-radius: 5px;
-    width: 200px;
-    padding: 10px 0;
-    background-image: linear-gradient(to bottom, black, #222, black);
-    background-color:#111;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 4px;
-    color: #d9b100;
+.tab-content > div:last-child {
+    display:none;
 }
 
-button#btn-sign-up {
-    font-size: 20px;
+
+div.form h1 {
     text-align: center;
-    letter-spacing: 4px;
-    background-color: rgba(0,0,0,0.0);
-    border: none;
-    font-size: 1em;
-    color: #d9b100;
+    font-family: 'Russo One';
+    color: #D9B100;
+    font-weight: 500;
+    margin:0 0 40px;
+}
+
+div.form label {
+    position:absolute;
+    transform:translateY(6px);
+    left:13px;
+    font-family: sans-serif;
+    color: #ccc;
+    transition: all 0.1s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+.req  {
+    margin: 2px;
+    color: #D9B100;
+}
+
+div.form label.active {
+    transform:translateY(50px);
+    left:2px;
+    font-size:14px;
+}
+
+div.form label.active.req {
+    opacity:0;
+}
+
+div.form label.highlight {
+    color: white;
+}
+
+div.form input, textarea {
+    font-size:22px;
+    display:block;
+    width:100%;
+    height:100%;
+    padding:5px 10px;
+    background-color: #111;
+    background-image:none;
+    border:1px solid #ccc;
+    color: white;
+    border-radius:0;
+    transition:border-color .25s ease, box-shadow .25s ease;
+}
+
+div.form input,textarea:focus {
+    outline:0;
+    border-color:#333;
+}
+
+div.form textarea {
+    border:2px solid #ccc;
+    resize: vertical;
+}
+
+.field-wrap {
+    position:relative;
+    margin-bottom:40px;
+}
+
+.top-row  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.top-row div {
+    width:46%;
+}
+
+top-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.form .button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-family: 'Russo One';
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #144d91;
+    color: white;
+    transition: all.5s ease;
+    -webkit-appearance: none;
+}
+
+div.form button:hover, button:focus {
+    background: #1c63bb;
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+.forgot {
+    margin-top: -20px;
+    text-align: right;
+    font-family: sans-serif;
+}
+
+div.form img {
+    top: -150px;
+    right: -30px;
+    position: absolute;
+    height: 40px;
 }

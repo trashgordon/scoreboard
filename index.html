@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
 
@@ -11,91 +12,97 @@
 </head>
 
 <body>
+    <audio>
+        <source src="/sounds/crowdnoise.mp3" type="audio/mpeg">
+        </audio>
+    
     <div id="flexbox-container">
 
         <!-- ***** TOP SECTION ***** -->
 
         <div class="top box">
-            <div id="monroe-text-bg"><p>MONROE</p></div>
 
+            <div class="name-btn" id="monroe-text-bg">
+                <p>MONROE</p>
+            </div>
             <div>
                 <div id="arena-bg">
-                    <h1>2K ARENA</h1>
+                    <h1>The Disrespect</h1>
                 </div>
-
                 <div id="versus-bg">
                     <h3 id="versus-text">VS</h3>
                 </div>
             </div>
-
-            <div id="cinco-text-bg">
+            <div class="name-btn" id="cinco-text-bg">
                 <p>CINCO</p>
             </div>
-        </div> <!-- end of top box -->
+        </div>
+    </div> <!-- end of top box -->
 
         <audio src="/sounds/crowdnoise.mp3" type="audio/mpeg"></audio>
 
         <!-- ***** MIDDLE SECTION *****-->
 
-        <div class="middle box">
-            <div id="scoreboard-container">
-                <img id="scoreboard-bg" src="img/trapezoid-large.png">
+    <div class="middle box">
+        <div id="scoreboard-container">
+            <img id="scoreboard-bg" src="img/trapezoid-large.png">
 
-                <div id="avatars-row">
-                    <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
-                    <img class="avatar" src="img/ava-cinco.png" alt="Monroe Avatar">
+            <div id="avatars-row">
+                <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
+                <img class="cinco avatar" src="img/avi-5.png" alt="cinco Avatar">
+            </div>
+
+            <div id="home-guest-row">
+                <p id="home-text">HOME</p>
+                <p id="guest-text">GUEST</p>
+            </div>
+
+            <div id="scorebox-squares-row">
+                <div class="scorebox-square">
+                    <p id="home-wins">00</p>
                 </div>
-
-                <div id="home-guest-row">
-                    <p id="home-text">HOME</p>
-                    <p id="guest-text">GUEST</p>
+                
+                <div class="scorebox-square">
+                    <p id="guest-wins">00</p>
                 </div>
+            </div>
 
-                <div id="scorebox-squares-row">
-                    <div class="scorebox-square">
-                        <p id="home-wins">00</p>
-                    </div>
-                    <div class="scorebox-square">
-                        <p id="guest-wins">00</p>
-                    </div>
-                </div>
-
-                <div id="total-pts-row">
-                    <div class="total-pts-col">
-                        <p class="total-pts-text">TOTAL PTS</p>
-                        <div class="total-pts-square">
-                            <p id="p1-tot-pts">0</p>
-                        </div>
-                    </div>
-
-                    <div class="total-pts-col">
-                        <p class="total-pts-text">TOTAL PTS</p>
-                        <div class="total-pts-square">
-                            <p id="p2-tot-pts">0</p>
-                        </div>
+            <div id="total-pts-row">
+                <div class="total-pts-col">
+                    <p class="total-pts-text">TOTAL PTS</p>
+                    <div class="total-pts-square">
+                        <p id="p1-tot-pts">0</p>
                     </div>
                 </div>
 
-                <div id="blowouts-row">
-                    <div class="blowouts-col">
-                        <p class="blowouts-text">BLOWOUTS</p>
-                        <div class="blowouts-square">
-                            <p id="p1-blowouts">0</p>
-                        </div>
+                <div class="total-pts-col">
+                    <p class="total-pts-text">TOTAL PTS</p>
+                    <div class="total-pts-square">
+                        <p id="p2-tot-pts">0</p>
                     </div>
+                </div>
+            </div>
 
-                    <div class="blowouts-col">
-                        <p class="blowouts-text">BLOWOUTS</p>
-                        <div class="blowouts-square">
-                            <p id="p2-blowouts">0</p>
-                        </div>
+            <div id="blowouts-row">
+                <div class="blowouts-col">
+                    <p class="blowouts-text">BLOWOUTS</p>
+                    <div class="blowouts-square">
+                        <p id="p1-blowouts">0</p>
                     </div>
                 </div>
 
-                <marquee>NO GAME STATS TO DISPLAY</marquee>
+                <div class="blowouts-col">
+                    <p class="blowouts-text">BLOWOUTS</p>
+                    <div class="blowouts-square">
+                        <p id="p2-blowouts">0</p>
+                    </div>
+                </div>
+            </div>
 
-            </div> <!-- end of scoreboard-container -->
-        </div> <!-- end of middle box -->
+            <marquee>NO GAME STATS TO DISPLAY</marquee>
+
+        </div> <!-- end of scoreboard-container -->
+    </div> <!-- end of middle box -->
 
         <!-- ***** BOTTOM SECTION ***** -->
 
@@ -282,9 +289,9 @@
                 
           </div> <!-- /form -->
 
-        </div> <!-- end of bottom box -->
+    </div> <!-- end of bottom box -->
     </div> <!-- end of flexbox-container -->
-    
+
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
@@ -293,5 +300,5 @@
     <script src="/app.js"></script>
 
 </body>
-</html>
 
+</html>

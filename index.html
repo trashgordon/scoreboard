@@ -14,199 +14,138 @@
 <body>
     <audio>
         <source src="/sounds/crowdnoise.mp3" type="audio/mpeg">
-        </audio>
+    </audio>
     
     <div id="flexbox-container">
 
         <!-- ***** TOP SECTION ***** -->
 
         <div class="top box">
-
-            <div class="name-btn" id="monroe-text-bg">
-                <p>MONROE</p>
+            <div class="name-btn" id="p1-header">
+                <p>monroe</p>
             </div>
+
             <div>
-                <div id="arena-bg">
+                <div id="title-header">
                     <h1>The Disrespect</h1>
                 </div>
-                <div id="versus-bg">
-                    <h3 id="versus-text">VS</h3>
+
+                <div id="vs-header">
+                    <h3>vs</h3>
                 </div>
             </div>
-            <div class="name-btn" id="cinco-text-bg">
-                <p>CINCO</p>
-            </div>
-        </div>
-    </div> <!-- end of top box -->
 
-        <audio src="/sounds/crowdnoise.mp3" type="audio/mpeg"></audio>
+            <div class="name-btn" id="p2-header">
+                <p>cinco</p>
+            </div>
+        </div> <!-- end of top box -->
 
         <!-- ***** MIDDLE SECTION *****-->
 
-    <div class="middle box">
-        <div id="scoreboard-container">
-            <img id="scoreboard-bg" src="img/trapezoid-large.png">
+        <div class="middle box">
+            <div id="scoreboard-container">
+
+                <div class="row" id="home-guest-row">
+                    <p id="home-text">home</p>
+                    <p id="guest-text">guest</p>
+                </div>
+
+                <div class="row" id="total-wins-row">
+                    <div class="total-wins-square">
+                        <p id="home-wins">00</p>
+                    </div>
+
+                    <div class="total-wins-square">
+                        <p id="guest-wins">00</p>
+                    </div>
+                </div>
+
+                <div class="row" id="total-pts-row">
+                    <div class="total-pts-col">
+                        <p class="total-pts-text">total pts</p>
+                        <div class="total-pts-square">
+                            <p id="p1-tot-pts">0</p>
+                        </div>
+                    </div>
+
+                    <div class="total-pts-col">
+                        <p class="total-pts-text">total pts</p>
+                        <div class="total-pts-square">
+                            <p id="p2-tot-pts">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="blowouts-row">
+                    <div class="blowouts-col">
+                        <p class="blowouts-text">blowouts</p>
+                        <div class="blowouts-square">
+                            <p id="p1-blowouts">0</p>
+                        </div>
+                    </div>
+
+                    <div class="blowouts-col">
+                        <p class="blowouts-text">blowouts</p>
+                        <div class="blowouts-square">
+                            <p id="p2-blowouts">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <marquee>no game stats to display</marquee>
+
+            </div> <!-- end of scoreboard-container -->
 
             <div id="avatars-row">
                 <img class="avatar" src="img/ava-monroe.png" alt="Monroe Avatar">
-                <img class="cinco avatar" src="img/avi-5.png" alt="cinco Avatar">
+                <img class="avatar" src="img/ava-cinco.png" alt="Cinco Avatar">
             </div>
 
-            <div id="home-guest-row">
-                <p id="home-text">HOME</p>
-                <p id="guest-text">GUEST</p>
-            </div>
+            <img id="scoreboard-bg" src="img/trapezoid-large.png">
 
-            <div id="scorebox-squares-row">
-                <div class="scorebox-square">
-                    <p id="home-wins">00</p>
-                </div>
-                
-                <div class="scorebox-square">
-                    <p id="guest-wins">00</p>
-                </div>
-            </div>
-
-            <div id="total-pts-row">
-                <div class="total-pts-col">
-                    <p class="total-pts-text">TOTAL PTS</p>
-                    <div class="total-pts-square">
-                        <p id="p1-tot-pts">0</p>
-                    </div>
-                </div>
-
-                <div class="total-pts-col">
-                    <p class="total-pts-text">TOTAL PTS</p>
-                    <div class="total-pts-square">
-                        <p id="p2-tot-pts">0</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="blowouts-row">
-                <div class="blowouts-col">
-                    <p class="blowouts-text">BLOWOUTS</p>
-                    <div class="blowouts-square">
-                        <p id="p1-blowouts">0</p>
-                    </div>
-                </div>
-
-                <div class="blowouts-col">
-                    <p class="blowouts-text">BLOWOUTS</p>
-                    <div class="blowouts-square">
-                        <p id="p2-blowouts">0</p>
-                    </div>
-                </div>
-            </div>
-
-            <marquee>NO GAME STATS TO DISPLAY</marquee>
-
-        </div> <!-- end of scoreboard-container -->
-    </div> <!-- end of middle box -->
+        </div> <!-- end of middle box -->
 
         <!-- ***** BOTTOM SECTION ***** -->
 
         <div class="bottom box">
-            <button id="add-game-btn">ADD GAME</button>
+            <button id="add-game-btn">add game</button>
 
             <div class="form" id="add-game-form">
 
-                <form action="#" id="form" method="post" name="form">
-                    <img id="close" src="img/btn-close.png" onclick ="hideForm()">
+                <form action="#" id="add-game-form" method="post" name="form">
+                    <img src="img/close-circle-outline.svg" id="add-game-close" onclick="hideAddGameForm()">
                     <h2>GAME STATS</h2>
                     <hr>
                     <div id="fields-container">
 
-                        <h3 id="form-versus-text">VS</h3>
+                        <h3 id="form-versus-text">vs</h3>
 
                         <div id="player-one-column">
-                            <label for="player-one-team">TEAM</label>
-                            <select id="player-one-team">
-                                <option value="atl">ATL</option>
-                                <option value="bkn">BKN</option>
-                                <option value="bos">BOS</option>
-                                <option value="cha">CHA</option>
-                                <option value="chi">CHI</option>
-                                <option value="cle">CLE</option>
-                                <option value="dal">DAL</option>
-                                <option value="den">DEN</option>
-                                <option value="det">DET</option>
-                                <option value="gsw">GSW</option>
-                                <option value="hou">HOU</option>
-                                <option value="ind">IND</option>
-                                <option value="lac">LAC</option>
-                                <option value="lal">LAL</option>
-                                <option value="mem">MEM</option>
-                                <option value="mia">MIA</option>
-                                <option value="mil">MIL</option>
-                                <option value="min">MIN</option>
-                                <option value="nop">NOP</option>
-                                <option value="nyk">NYK</option>
-                                <option value="okc">OKC</option>
-                                <option value="orl">ORL</option>
-                                <option value="phi">PHI</option>
-                                <option value="phx">PHX</option>
-                                <option value="por">POR</option>
-                                <option value="sac">SAC</option>
-                                <option value="sas">SAS</option>
-                                <option value="tor">TOR</option>
-                                <option value="uta">UTA</option>
-                                <option value="was">WAS</option>
-                            </select>
+                            <label for="player-one-team">team</label>
+                            <select class="choose-team" id="player-one-team"></select>
 
-                            <label for="player-one-score">SCORE</label>
+                            <label for="player-one-score">score</label>
                             <input type="number" id="player-one-score">
                         </div>
 
                         <div id="player-two-column">
-                            <label for="player-two-team">TEAM</label>
-                            <select id="player-two-team">
-                                <option value="atl">ATL</option>
-                                <option value="bkn">BKN</option>
-                                <option value="bos">BOS</option>
-                                <option value="cha">CHA</option>
-                                <option value="chi">CHI</option>
-                                <option value="cle">CLE</option>
-                                <option value="dal">DAL</option>
-                                <option value="den">DEN</option>
-                                <option value="det">DET</option>
-                                <option value="gsw">GSW</option>
-                                <option value="hou">HOU</option>
-                                <option value="ind">IND</option>
-                                <option value="lac">LAC</option>
-                                <option value="lal">LAL</option>
-                                <option value="mem">MEM</option>
-                                <option value="mia">MIA</option>
-                                <option value="mil">MIL</option>
-                                <option value="min">MIN</option>
-                                <option value="nop">NOP</option>
-                                <option value="nyk">NYK</option>
-                                <option value="okc">OKC</option>
-                                <option value="orl">ORL</option>
-                                <option value="phi">PHI</option>
-                                <option value="phx">PHX</option>
-                                <option value="por">POR</option>
-                                <option value="sac">SAC</option>
-                                <option value="sas">SAS</option>
-                                <option value="tor">TOR</option>
-                                <option value="uta">UTA</option>
-                                <option value="was">WAS</option>
-                            </select>
+                            <label for="player-two-team">team</label>
+                            <select class="choose-team" id="player-two-team"></select>
 
-                            <label for="player-two-score">SCORE</label>
+                            <label for="player-two-score">score</label>
                             <input type="number" id="player-two-score">
                         </div>
 
                     </div> <!-- end of fields-container -->
 
                     <hr>
-                    <a id="btn-submit">SUBMIT</a>
+                    <a id="btn-submit">submit</a>
                 </form>
 
             </div> <!-- end of add-game-form -->
 
             <!-- Sign up and Login form -->
-            <div class="form" id="loginForm">
+            <div class="form" id="login-form">
       
                 <ul class="tab-group">
                   <li class="tab active"><a href="#signup">Sign Up</a></li>

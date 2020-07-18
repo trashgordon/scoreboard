@@ -207,7 +207,7 @@ function calcBlowouts() {
         'por', 'sac', 'sas', 'tor', 'uta', 'was']
 
     teams.forEach((team) => {
-        const teamOption = `"<option value=\"${team}\">${team.toUpperCase()}</option>'`;
+        const teamOption = `"<option value=\"${team}\">${team}</option>'`;
         $(".choose-team").append(teamOption);
     });
 })();
@@ -240,7 +240,7 @@ function updateMarquee() {
             const game = childSnapshot.val();
 
             $('marquee').text(`
-            ${game.playerOneTeam.toUpperCase()} VS ${game.playerTwoTeam.toUpperCase()}
+            ${game.playerOneTeam} VS ${game.playerTwoTeam}
             : ${game.playerOneScore} - ${game.playerTwoScore}
             `);
     });

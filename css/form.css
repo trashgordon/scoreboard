@@ -10,20 +10,10 @@
 *** ADD GAME FORM ***
 *** ************* **/
 
-img#close {
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-}
-
 div#add-game-form {
     position: absolute;
     top: 25%;
-    left: 50%;
     display: none;
-    margin-left: -280px;
     font-family: 'harabara_maisharabaramaisdemo';
 }
 
@@ -32,10 +22,7 @@ div#add-game-form form {
     display: flex;
     border: 5px solid white;
     border-radius: 10px;
-    max-width: 450px;
-    min-width: 450px;
     padding:10px 50px;
-    background-image: linear-gradient(to bottom right, black, #222, black);
     font-family: 'harabara_maisharabaramaisdemo';
     color: #d9b100;
 }
@@ -51,8 +38,8 @@ div#add-game-form h2 {
 
 h3#form-versus-text {
     position: absolute;
-    top: 60px;
-    left: 230px;
+    top: 100px;
+    left: 265px;
     z-index: 99;
     font-size: 5em;
     text-shadow: 3px 3px 6px #000;
@@ -90,7 +77,7 @@ div#player-two-column {
     text-align: right;
 }
 
-a#submit {
+a#btn-submit {
     display: block;
     margin: 10px auto;
     border: 1px solid #444;
@@ -106,10 +93,26 @@ a#submit {
     color: #d9b100;
 }
 
+img#add-game-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    z-index: 50;
+}
+
+.choose-team {
+    text-transform: uppercase;
+}
+
 /** ********** ***
 *** LOGIN FORM ***
 *** ********** **/
 
+
+div#login-form {
+    display: none;
+}
 div.form *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -200,7 +203,7 @@ div.form h1 {
     margin:0 0 40px;
 }
 
-div.form label {
+div#login-form label {
     position:absolute;
     transform:translateY(6px);
     left:13px;
@@ -216,13 +219,13 @@ div.form label {
     color: #D9B100;
 }
 
-div.form label.active {
+div#login-form label.active {
     transform:translateY(50px);
     left:2px;
     font-size:14px;
 }
 
-div.form label.active.req {
+div#login-form label.active.req {
     opacity:0;
 }
 
@@ -305,7 +308,7 @@ div.form button:hover, button:focus {
     font-family: sans-serif;
 }
 
-div.form img {
+div#login-form img {
     top: -150px;
     right: -30px;
     position: absolute;

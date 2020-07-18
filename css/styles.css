@@ -70,14 +70,14 @@ div.bottom {
 
 /** ARENA SECTION **/
 
-div#arena-bg {
+div#title-header {
     position: relative;
     border-right: 25px solid transparent;
     border-bottom: 50px solid #144d91;
     border-left: 25px solid transparent;
 }
 
-div#arena-bg h1 {
+div#title-header h1 {
     position: absolute;
     margin-top: 13px;
     margin-left: 20px;
@@ -91,7 +91,7 @@ div#arena-bg h1 {
 
 /** VERSUS SECTION **/
 
-div#versus-bg {
+div#vs-header {
     position: relative;
     margin-bottom: -15px;
     border-top: 75px solid rgba(0, 0, 0, 0.7);
@@ -100,30 +100,27 @@ div#versus-bg {
     width: 200px;
 }
 
-div#versus-bg h3 {
+div#vs-header h3 {
     position: absolute;
     margin-top: -37%;
     margin-left: 27%;
     font-size: 4em;
     font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
     letter-spacing: 4px;
     color: #ccc;
 }
 
-#versus-text {
-    z-index: 99;
-}
-
 /** PLAYER NAMES **/
 
-div#monroe-text-bg {
+div#p1-header {
     transform: skew(35deg);
     margin-right: -20px;
     width: 300px;
     background-color: #a31826;
 }
 
-div#monroe-text-bg p {
+div#p1-header p {
     transform: skew(-35deg);
     margin: 0;
     font-size: 2em;
@@ -134,14 +131,14 @@ div#monroe-text-bg p {
     color: #d9b100;
 }
 
-div#cinco-text-bg {
+div#p2-header {
     transform: skew(-35deg);
     margin-left: -20px;
     width: 300px;
     background-color: #3248a8;
 }
 
-div#cinco-text-bg p {
+div#p2-header p {
     transform: skew(35deg);
     margin: 0;
     font-size: 2em;
@@ -193,7 +190,7 @@ img.cinco {
     position: absolute;
     display: block;
     bottom: -80px;
-    left: 815px;
+    left: 835px;
     z-index: 1;
 }
 
@@ -229,7 +226,7 @@ p#guest-text {
 
 /** ROW: TOTAL WINS **/
 
-div#scorebox-squares-row {
+div#total-wins-row {
     position: absolute;
     flex-direction: row;
     justify-content: space-around;
@@ -238,7 +235,7 @@ div#scorebox-squares-row {
     width: 80%;
 }
 
-div#scorebox-squares-row p {
+div#total-wins-row p {
     margin: 0;
     height: 173px;
     padding-top: 27px;
@@ -251,7 +248,7 @@ div#scorebox-squares-row p {
 
 }
 
-div.scorebox-square {
+div.total-wins-square {
     border: 7px solid #333;
     box-shadow: inset -2px -2px #666;
     width: 250px;
@@ -286,7 +283,7 @@ p.total-pts-text {
     padding: 10px;
     font-size: 0.7em;
     font-family: 'Archivo Black', sans-serif;
-    color: #ccc;
+    color: #db2033;
 }
 
 div.total-pts-col {
@@ -336,7 +333,7 @@ p.blowouts-text {
     padding: 10px;
     font-size: 0.7em;
     font-family: 'Archivo Black', sans-serif;
-    color: #ccc;
+    color: #db2033;
 }
 
 div.blowouts-col {
@@ -373,6 +370,7 @@ marquee {
     background-color: rgba(0, 0, 0, 0.8);
     font-size: 2em;
     font-family: 'Subway Ticker Grid';
+    text-transform: uppercase;
     color: red;
 }
 
@@ -634,6 +632,7 @@ audio {
     color: #FFF;
     transition: all 0.5s;
     position: relative;
+    text-transform: uppercase;
 }
 
 .name-btn::before {

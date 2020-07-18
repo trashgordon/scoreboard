@@ -359,6 +359,7 @@ button#add-game-btn {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
+    cursor: pointer;
     text-transform: uppercase;
     width: 250px;
     height: 100px;

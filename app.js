@@ -274,7 +274,7 @@ $("#add-game-btn").hover(function() {
 });
 
 // Animations for login form
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+$('.form').find('input, select, textarea').on('keyup blur focus', function (e) {
   
     var $this = $(this),
         label = $this.prev('label');

@@ -31,6 +31,11 @@
     MAIN CONTAINERS AND BOXES
 *** ************************* **/
 
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     max-height: 100%;
     background-image: url("../img/desktop-bg-resized.jpg");
@@ -153,20 +158,22 @@ div#p2-header p {
     MIDDLE BOX ELEMENTS (Everything on the scoreboard)
 *** ************************************************** **/
 
-div#scoreboard-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
+img#scoreboard-bg {
+    position: absolute;
     margin-top: 35px;
     width: 900px;
     height: 600px;
+    opacity: 0.7;
+    z-index: -1;
 }
 
-img#scoreboard-bg {
-    position: absolute;
-    width: 900px;
+div#scoreboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 35px;
+    width: 648px;
     height: 600px;
-    opacity: 0.7;
 }
 
 /** AVATARS **/
@@ -174,6 +181,7 @@ img#scoreboard-bg {
 div#avatars-row {
     position: absolute;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 1150px;
     margin-top: 200px;
@@ -184,55 +192,36 @@ img.avatar {
     height: 250px;
 }
 
-img.cinco {
-    width: 375px;
-    height: 375px;
-    position: absolute;
-    display: block;
-    bottom: -80px;
-    left: 835px;
-    z-index: 1;
-}
-
 /** ROW: HOME GUEST **/
 
 div#home-guest-row {
-    position: absolute;
     flex-direction: row;
     justify-content: space-between;
     display: flex;
-    width: 750px;
+    width: 648px;
     font-size: 2.5em;
     font-family: 'Archivo Black', sans-serif;
     font-weight: 900;
     letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
     color: #ccc;
 }
 
-p#home-text {
+div#home-guest-row p {
+    /* margin: 20px 0 0 0; */
     margin: 0;
-    margin-top: 20px;
-    margin-left: 120px;
-    margin-right: 20px;
-    padding-left: 5px;
-}
-
-p#guest-text {
-    margin: 0;
-    margin-top: 20px;
-    margin-right: 95px;
-    margin-left: 170px;
+    width:264px;
 }
 
 /** ROW: TOTAL WINS **/
 
 div#total-wins-row {
-    position: absolute;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex;
-    margin-top: 80px;
-    width: 80%;
+    /* margin-top: 10px; */
+    width: 648px;
 }
 
 div#total-wins-row p {
@@ -245,7 +234,6 @@ div#total-wins-row p {
     text-shadow: 1px 1px 10px #ffd400;
     letter-spacing: 15px;
     color: #d9b504;
-
 }
 
 div.total-wins-square {
@@ -259,37 +247,28 @@ div.total-wins-square {
 /** ROW: TOTAL POINTS **/
 
 div#total-pts-row {
-    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 300px;
-    width: 700px;
+    justify-content: space-between;
+    width: 648px;
     font-size: 2em;
     text-align: center;
 }
 
-div#total-pts-text-row {
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 750px;
-
-}
-
 p.total-pts-text {
-    margin: 0;
-    padding: 10px;
+    /* margin: 10px 0; */
     font-size: 0.7em;
     font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
     color: #db2033;
+    width: 138px;
 }
 
 div.total-pts-col {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 264px;
 }
 
 div.total-pts-square {
@@ -310,36 +289,29 @@ div.total-pts-square p {
 /** ROW: TOTAL BLOWOUTS **/
 
 div#blowouts-row {
-    position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 415px;
-    width: 700px;
+    justify-content: space-between;
+    width: 648px;
     font-size: 2em;
     text-align: center;
 }
 
-div#blowouts-text-row {
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 750px;
-}
-
 p.blowouts-text {
-    margin: 0;
-    padding: 10px;
+    /* margin: 10px 0; */
     font-size: 0.7em;
     font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
     color: #db2033;
+    width: 138px;
+
 }
 
 div.blowouts-col {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 264px;
 }
 
 div.blowouts-square {
@@ -360,12 +332,9 @@ div.blowouts-square p {
 /** SCROLLING MARQUEE **/
 
 marquee {
-    position: absolute;
-    left: 150px;
     overflow: hidden;
-    margin-top: 540px;
     border-radius: 20px;
-    width: 600px;
+    width: 648px;
     padding-top: 6px;
     background-color: rgba(0, 0, 0, 0.8);
     font-size: 2em;
@@ -390,6 +359,7 @@ button#add-game-btn {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
+    text-transform: uppercase;
     width: 250px;
     height: 100px;
 }

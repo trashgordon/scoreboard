@@ -12,56 +12,67 @@
 
 div#add-game-form {
     position: absolute;
-    top: 25%;
     display: none;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Russo One';
+    max-width: 500px;
+    min-width: 300px;
 }
 
 div#add-game-form form {
     flex-direction: column;
     display: flex;
-    border: 5px solid white;
-    border-radius: 10px;
-    padding:10px 50px;
-    font-family: 'harabara_maisharabaramaisdemo';
+    font-family: 'Russo One';
     color: #d9b100;
 }
 
 div#add-game-form h2 {
-    margin: -10px -50px;
-    border-radius: 10px 10px 0 0;
     padding: 20px 35px;
-    background-color: rgba(0,0,0,0.5);
     text-align: center;
     letter-spacing: 4px;
+    font-size: 3em;
+    margin-bottom: 25px;
 }
 
 h3#form-versus-text {
     position: absolute;
-    top: 100px;
-    left: 265px;
-    z-index: 99;
-    font-size: 5em;
-    text-shadow: 3px 3px 6px #000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 50%;
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+    z-index: 4;
+    font-size: 2.5em;
+    padding: 27px 0;
 }
 
-hr {
-    margin:10px -50px;
-    border:0;
-    border-top:1px solid #444;
+div#add-game-form label {
+    font-size: 1.5em;
 }
 
 div#add-game-form input, select {
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 70px;
     box-sizing: border-box;
     width: 150px;
     padding: 10px;
+    background-color: #111;
+    color: #ccc;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 1em;
+
 }
+
 div#fields-container {
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     display: flex;
+    text-transform: uppercase;
     letter-spacing: 4px;
 }
 
@@ -69,36 +80,46 @@ div#player-one-column {
     flex-direction: column;
     display: flex;
     text-align: left;
+    z-index: 5;
 }
 
 div#player-two-column {
     display: flex;
     flex-direction: column;
     text-align: right;
+    z-index: 5;
 }
 
 a#btn-submit {
     display: block;
-    margin: 10px auto;
+    margin: 0 auto;
     border: 1px solid #444;
     border-radius: 5px;
     width: 200px;
     padding: 10px 0;
     background-image: linear-gradient(to bottom, black, #222, black);
     background-color:#111;
-    font-size: 20px;
+    cursor: pointer;
+    font-size: 1.5em;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     letter-spacing: 4px;
     color: #d9b100;
 }
 
+a#btn-submit:hover {
+    box-shadow: 0 0 10px #666;
+    color: white;
+}
+
 img#add-game-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
     height: 40px;
-    z-index: 50;
+    z-index: 5;
 }
 
 .choose-team {
@@ -247,7 +268,7 @@ div.form input, textarea {
     transition:border-color .25s ease, box-shadow .25s ease;
 }
 
-div.form input,textarea:focus {
+div.form input, select, textarea:focus {
     outline:0;
     border-color:#333;
 }

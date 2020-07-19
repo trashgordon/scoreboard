@@ -253,9 +253,12 @@ function updateMarquee() {
 // Show and hide game entry form
 function showAddGameForm() {
     $('#add-game-form').show();
+    $('#add-game-btn').hide();
 }
 function hideAddGameForm() {
     $('#add-game-form').hide();
+    $('#add-game-btn').show();
+
 }
 
 // Show and hide login form
@@ -274,7 +277,7 @@ $("#add-game-btn").hover(function() {
 });
 
 // Animations for login form
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+$('.form').find('input, select, textarea').on('keyup blur focus', function (e) {
   
     var $this = $(this),
         label = $this.prev('label');

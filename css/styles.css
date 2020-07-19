@@ -39,12 +39,19 @@ body, h1, h2, h3, p {
 body {
     max-height: 100%;
     background-image: url("../img/desktop-bg-resized.jpg");
-    background-position: center center;
+    background-position: top;
     background-repeat: no-repeat;
     background-color: #000;
 }
 
 div#flexbox-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
     display: flex;
@@ -67,31 +74,31 @@ div.middle {
 
 div.bottom {
     margin-top: 20px;
+    height: 100px;
 }
 
 /** **************** ***
     TOP BOX ELEMENTS
 *** **************** **/
 
-/** ARENA SECTION **/
+/** TITLE SECTION **/
 
 div#title-header {
     position: relative;
-    border-right: 25px solid transparent;
-    border-bottom: 50px solid #144d91;
-    border-left: 25px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 100px solid black;
+    border-left: 45px solid transparent;
 }
 
 div#title-header h1 {
     position: absolute;
-    margin-top: 13px;
-    margin-left: 20px;
-    font-size: 20px;
-    font-family: 'Archivo Black', sans-serif;
-    text-shadow: 2px 2px 3px #212585;
+    margin: 10px 0 0 -17px;
+    font-size: 2em;
+    font-family: 'Russo One', sans-serif;
     letter-spacing: 4px;
-    color: #ccc;
+    color: #d9b100;
     text-align: center;
+    text-transform: uppercase;
 }
 
 /** VERSUS SECTION **/
@@ -109,11 +116,11 @@ div#vs-header h3 {
     position: absolute;
     margin-top: -37%;
     margin-left: 27%;
-    font-size: 4em;
-    font-family: 'Archivo Black', sans-serif;
+    font-size: 3em;
+    font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #ccc;
+    color: #d9b100;
 }
 
 /** PLAYER NAMES **/
@@ -129,9 +136,8 @@ div#p1-header p {
     transform: skew(-35deg);
     margin: 0;
     font-size: 2em;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-align: center;
-    text-shadow: 2px 2px 3px #6e1501;
     letter-spacing: 6px;
     color: #d9b100;
 }
@@ -140,18 +146,17 @@ div#p2-header {
     transform: skew(-35deg);
     margin-left: -20px;
     width: 300px;
-    background-color: #3248a8;
+    background-color: #aaa;
 }
 
 div#p2-header p {
     transform: skew(35deg);
     margin: 0;
     font-size: 2em;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-align: center;
-    text-shadow: 2px 2px 3px #212585;
     letter-spacing: 6px;
-    color: #ccc;
+    color: #144d91;
 }
 
 /** ************************************************** ***
@@ -163,7 +168,7 @@ img#scoreboard-bg {
     margin-top: 35px;
     width: 900px;
     height: 600px;
-    opacity: 0.7;
+    opacity: 0.9;
     z-index: -1;
 }
 
@@ -183,8 +188,8 @@ div#avatars-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1150px;
-    margin-top: 200px;
+    width: 1000px;
+    margin-top: 340px;
 }
 
 img.avatar {
@@ -200,7 +205,7 @@ div#home-guest-row {
     display: flex;
     width: 648px;
     font-size: 2.5em;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-weight: 900;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -258,7 +263,7 @@ div#total-pts-row {
 p.total-pts-text {
     /* margin: 10px 0; */
     font-size: 0.7em;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     color: #db2033;
     width: 138px;
@@ -300,7 +305,7 @@ div#blowouts-row {
 p.blowouts-text {
     /* margin: 10px 0; */
     font-size: 0.7em;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     color: #db2033;
     width: 138px;
@@ -355,10 +360,11 @@ button#add-game-btn {
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     font-size: 30px;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Russo One', sans-serif;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
     color: #d9b100;
+    cursor: pointer;
     text-transform: uppercase;
     width: 250px;
     height: 100px;

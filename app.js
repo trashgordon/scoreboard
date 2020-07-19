@@ -253,9 +253,12 @@ function updateMarquee() {
 // Show and hide game entry form
 function showAddGameForm() {
     $('#add-game-form').show();
+    $('#add-game-btn').hide();
 }
 function hideAddGameForm() {
     $('#add-game-form').hide();
+    $('#add-game-btn').show();
+
 }
 
 // Show and hide login form
